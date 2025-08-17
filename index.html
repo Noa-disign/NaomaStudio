@@ -34,12 +34,8 @@
 <div class="logo-header">
   <div class="logo-container">
     <img src="logo.svg" alt="Logo premium" class="logo-main">
-    <img src="LOGO TEXTE.svg" alt="Texte Naoma Studio" class="logo-text">
   </div>
 </div>
-
-
-
 
 
  <!-- Hero Section -->
@@ -54,31 +50,30 @@
  </div>
 </section>
 
-<!-- Bande défilante fluide et épurée -->
-<div class="marquee-bar">
- <div class="marquee-track">
- <span>Rentable</span>
- <span>Fiable</span>
- <span>Unique</span>
- <span>Professionnel</span>
- <span>Impactant</span>
- <span>Créatif</span>
- <!-- Duplicata pour effet boucle infinie -->
- <span>Rentable</span>
- <span>Fiable</span>
- <span>Unique</span>
- <span>Professionnel</span>
- <span>Impactant</span>
- <span>Créatif</span>
- </div>
+<div class="marquee-wrapper">
+  <div class="floating-image">
+    <img src="bitmoji2.png" alt="Image flottante">
+  </div>
+
+  <div class="marquee-bar">
+    <div class="marquee-track">
+        <span>Rentable</span>
+        <span>Fiable</span>
+        <span>Unique</span>
+        <span>Professionnel</span>
+        <span>Impactant</span>
+        <span>Créatif</span>
+        <!-- Duplicata pour boucle infinie -->
+        <span>Rentable</span>
+        <span>Fiable</span>
+        <span>Unique</span>
+        <span>Professionnel</span>
+        <span>Impactant</span>
+        <span>Créatif</span>
+    </div>
+  </div>
 </div>
 
-
-
-
-<div class="floating-image">
- <img src="bitmoji2.png" alt="Image libre">
-</div>
 
 
 <!-- Section Portfolio défilante -->
@@ -295,19 +290,62 @@ highlight.addEventListener('click', () => {
 
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const logo = document.querySelector(".logo-main");
-  if (logo) {
-    logo.addEventListener("click", () => {
-      logo.classList.remove("clicked"); // reset si déjà animé
-      void logo.offsetWidth;            // "repaint" pour relancer l’anim
-      logo.classList.add("clicked");
-    });
+<style>
+  .logo-main {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    cursor: pointer;
   }
-});
+  .logo-main.fade-out {
+    opacity: 0;
+    transform: scale(0.9) rotate(-5deg);
+  }
+</style>
 
+
+<style>
+  .logo-container {
+    display: inline-block;
+    perspective: 1000px; /* profondeur pour l’effet 3D */
+    cursor: pointer;
+  }
+
+  .logo-main {
+    display: block;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+  .flipped {
+    transform: rotateY(180deg);
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const logo = document.querySelector(".logo-main");
+    const container = document.querySelector(".logo-container");
+
+    container.addEventListener("click", () => {
+      logo.classList.add("flipped");
+
+      setTimeout(() => {
+        // Changement du src après la moitié de l’animation (moment du "flip")
+        if (logo.getAttribute("src") === "logo.svg") {
+          logo.setAttribute("src", "LOGO TEXTE.svg");
+        } else {
+          logo.setAttribute("src", "logo.svg");
+        }
+
+        // Retour à l'état normal
+        logo.classList.remove("flipped");
+      }, 300); // moitié de la durée totale
+    });
+  });
 </script>
+
+
+
+
+
 
 
 </body>

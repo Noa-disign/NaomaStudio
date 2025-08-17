@@ -1,5 +1,5 @@
  :root {
- --bg-primary: #b30909;
+ --bg-primary: #000000;
  --bg-secondary: #1a1a1a;
  --bg-card: #1e1e1e;
  --text-primary: #ffffff;
@@ -578,34 +578,17 @@ body, p, .section-subtitle, .footer-brand-text,
  color: #A3BFFA;
 }
 
-.floating-image {
- position: absolute;
- top: 415px; /* Distance depuis le haut de la page */
- left: 40%; /* Centre horizontalement */
- transform: translateX(-50%); /* Ajuste exactement au centre */
- 
- width: 150px;
- z-index: -10;
- pointer-events: none;
-}
 
-
-.floating-image img {
- width: 130%;
- height: auto;
- display: block;
- border-radius: 10px;
-}
 
 .logo-header {
- display: flex;
- justify-content: center;
- margin-top: 3rem; /* Réduit l’espace en haut */
- margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 12.0rem;
 }
 
 .logo-header img {
- height: 100px; /* Taille du logo */
+ height: 90px; /* Taille du logo */
  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -624,9 +607,17 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 .logo-main {
-  height: 100px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  height: 100px; /* taille du logo normal */
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease;
 }
+
+/* Quand c'est le logo texte */
+.logo-main.text-mode {
+  height: 400px !important; /* logo texte plus grand */
+}
+
+
 
 /* Quand on ajoute la classe "clicked" */
 .logo-main.clicked {
@@ -676,14 +667,38 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
+.marquee-wrapper {
+  position: relative; /* conteneur parent de la barre et de l'image */
+}
 
 .marquee-bar {
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; /* garde le scroll uniquement pour le texte */
   background: #A3BFFA;
   padding: 1.5rem 0;
   margin-top: 9rem;
+  position: relative;
+  z-index: 1;
 }
+
+.floating-image {
+  position: absolute;
+  bottom: 56%; /* juste au-dessus de la barre */
+  left: 42%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0; /* au-dessus de la barre */
+}
+
+.floating-image img {
+  width: 130%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
 
 .marquee-track {
   display: inline-flex;
