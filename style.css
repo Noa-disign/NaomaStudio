@@ -230,7 +230,7 @@ body, p, .section-subtitle, .footer-brand-text,
  
 
 .service-card {
-  background: var(--bg-card);
+  background: var(--gris-foncé);
   border: 4px solid var(--accent);
   border-radius: 18px;
   padding: 3rem 1.5rem;
@@ -240,11 +240,6 @@ body, p, .section-subtitle, .footer-brand-text,
   margin: 1.5rem auto;
 }
 
-/* suppression de l’effet au survol */
-.service-card:hover {
-  transform: none;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
 
 .service-icon {
   width: 60px;
@@ -545,7 +540,7 @@ body, p, .section-subtitle, .footer-brand-text,
  --violet-rose: #E3D0FF;
  --noir-nuit: #1E1E2F;
  --blanc-doux: #F9F9FB;
- --gris-foncé:  rgb(39, 39, 39);
+ --gris-foncé:  rgb(19, 19, 19);
  --rayon: 18px;
  --ombre-douce: 0 8px 24px rgba(198, 180, 242, 0.2);
 }
@@ -781,7 +776,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
  .footer {
-            background: rgba(15, 15, 15, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             position: relative;
             overflow: hidden;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -839,7 +834,7 @@ body, p, .section-subtitle, .footer-brand-text,
 .bit2-image {
     position: absolute;
     margin-top: 0px;
-    bottom: 372px; 
+    bottom: 347px; 
     left: 50%;    
     transform: translateX(-50%);
     z-index: 1;
@@ -880,7 +875,7 @@ body, p, .section-subtitle, .footer-brand-text,
     font-size: 1rem;
     font-weight: 700;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 12px 25px #8bb0ff6b ; /* ombre plus visible */
+    box-shadow: 0 12px 25px #9dbcff31 ; /* ombre plus visible */
     border: none; /* contour enlevé */
     transform: rotate(-2deg); /* inclinaison légère */
     position: relative;
@@ -891,7 +886,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 .cta-button:hover {
     transform: translateY(-2px) rotate(-2deg); /* garde l'inclinaison au hover */
-    box-shadow: 0 18px 35px rgba(50, 105, 255, 0.35); /* ombre plus prononcée au hover */
+    box-shadow: 0 18px 35px rgba(171, 193, 255, 0.158); /* ombre plus prononcée au hover */
 }
 
 .cta-button::before {
@@ -1057,76 +1052,6 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
-
-
-
-/* From Uiverse.io by 0800Gonza */ 
-.card {
-  width: fit-content;
-  height: fit-content;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 25px;
-  gap: 20px;
-}
-
-/* for all social containers*/
-.socialContainer {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background-color: rgb(44, 44, 44);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition-duration: 1s;
-}
-/* instagram*/
-.containerOne:hover {
-  background-color: #d62976;
-  transition-duration: 0.3s;
-}
-
-/* linkdin*/
-.containerThree:hover {
-  background-color: #0072b1;
-  transition-duration: 0.3s;
-}
-/* Whatsapp*/
-.containerFour:hover {
-  background-color: #128c7e;
-  transition-duration: 0.3s;
-}
-
-
-.socialSvg {
-  width: 17px;
-}
-
-.socialSvg path {
-  fill: rgb(255, 255, 255);
-}
-
-.socialContainer:hover .socialSvg {
-  animation: slide-in-top 0.3s both;
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
 .faq-section {
   max-width: 350px; /* largeur encore plus compacte */
   margin: auto;
@@ -1211,12 +1136,15 @@ body, p, .section-subtitle, .footer-brand-text,
 
 .arrow {
   font-size: 1.2rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--accent); /* couleur par défaut */
 }
 
 .faq-item.active .arrow {
   transform: rotate(45deg);
+  color: var(--bg-primary); /* couleur quand ouvert */
 }
+
 
 /* Responsive mobile */
 @media (max-width: 600px) {
