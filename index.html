@@ -348,7 +348,21 @@ highlight.addEventListener('click', () => {
 </script>
 
 
+<script>
+  // Sélection de tous les éléments li
+const includesItems = document.querySelectorAll('.service-includes li');
 
+includesItems.forEach(item => {
+  item.addEventListener('click', () => {
+    // On remet tous les éléments en gris
+    includesItems.forEach(i => i.style.color = 'var(--text-secondary)');
+    // On met celui cliqué en blanc
+    item.style.color = '#fff';
+  });
+});
+
+</script>
+ 
 
 
 

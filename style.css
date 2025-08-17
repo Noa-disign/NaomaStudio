@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 body, p, .section-subtitle, .footer-brand-text, 
 .footer-link-list a, .testimonial-quote, .testimonial-author, 
 .price-label, .service-card p, .contact-details p, 
-.form-group label {
+.form-group label, .faq-answer {
     font-family: 'Inter', Arial, sans-serif;
     font-size: 0.85rem; /* un peu plus petit */
     line-height: 1.2; /* texte plus compact */
@@ -1099,11 +1099,11 @@ body, p, .section-subtitle, .footer-brand-text,
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  padding: 0 18px; /* padding vertical réduit à 0 */
-  transition: max-height 0.4s ease, padding 0.3s ease, background 0.3s ease;
-  line-height: 1.4; /* un peu plus compact */
+  padding: 0 18px;
+  line-height: 1.4;
   font-size: 0.9rem !important;
   color: #000;
+  transition: max-height 0.4s ease, padding 0.4s ease, background 0.3s ease;
 }
 
 .faq-answer p {
@@ -1125,14 +1125,12 @@ body, p, .section-subtitle, .footer-brand-text,
 
 /* État ouvert */
 .faq-item.active .faq-answer {
-  max-height: 500px; /* assez pour tout le texte */
-  padding: 2px 18px 18px 18px !important; /* petit espace en bas */
+  max-height: 500px; /* ouverture animée */
+  padding: 2px 18px 18px 18px !important;
   background: #ffffff;
   color: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
 }
-
-
 
 .arrow {
   font-size: 1.2rem;
