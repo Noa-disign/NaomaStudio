@@ -313,34 +313,36 @@ highlight.addEventListener('click', () => {
     display: block;
     transition: transform 0.6s ease-in-out;
     transform-style: preserve-3d;
+    backface-visibility: hidden; /* empêche le “dos” d’apparaître pendant le flip */
   }
 
   .flipped {
     transform: rotateY(180deg);
   }
 </style>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const logo = document.querySelector(".logo-main");
+    const logo = document.querySelector(".logo-main"); // on utilise .logo-main
     const container = document.querySelector(".logo-container");
 
     container.addEventListener("click", () => {
       logo.classList.add("flipped");
 
       setTimeout(() => {
-        // Changement du src après la moitié de l’animation (moment du "flip")
-        if (logo.getAttribute("src") === "logo.svg") {
+        // Changement du src après la moitié de l’animation
+        if (logo.getAttribute("src") === "LOGO.svg") {
           logo.setAttribute("src", "LOGO TEXTE.svg");
         } else {
-          logo.setAttribute("src", "logo.svg");
+          logo.setAttribute("src", "LOGO.svg");
         }
 
-        // Retour à l'état normal
-        logo.classList.remove("flipped");
+        logo.classList.remove("flipped"); // Retour à l'état normal
       }, 300); // moitié de la durée totale
     });
   });
 </script>
+
 
 
 
