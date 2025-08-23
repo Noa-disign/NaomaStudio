@@ -728,49 +728,75 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 
-
 .portfolio-carousel {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
+  position: relative;
+  overflow: hidden;
   padding: 1rem 0;
-}
-
-.portfolio-carousel::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
 }
 
 .portfolio-track {
   display: flex;
   gap: 2rem;
-  width: fit-content;
   scroll-behavior: smooth;
-  cursor: grab;
-  user-select: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  scroll-snap-type: x mandatory;
   padding: 0 2rem;
 }
 
-.portfolio-track:active {
-  cursor: grabbing;
+.portfolio-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .portfolio-item {
-  flex: 0 0 300px;
-  height: 225px;
-  overflow: hidden;
+  flex: 0 0 400px; /* largeur fixe = rectangulaire */
+  height: 250px;
   border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  background: #000; /* ou #fff si tu préfères */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
   pointer-events: none;
   user-select: none;
 }
 
-.portfolio-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  pointer-events: none;
-  user-select: none;
+/* Flèches */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.arrow:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+.arrow.left {
+  left: 0.5rem;
+}
+
+.arrow.right {
+  right: 0.5rem;
 }
 
 

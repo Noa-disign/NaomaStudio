@@ -84,6 +84,10 @@
     </div>
 
     <div class="portfolio-carousel">
+      <!-- Flèche gauche -->
+      <button class="arrow left">‹</button>
+
+      <!-- Piste des items -->
       <div class="portfolio-track" id="carousel-track">
         <div class="portfolio-item">
           <img src="bls.png" alt="Création 1">
@@ -98,6 +102,9 @@
           <img src="creation4.jpg" alt="Création 4">
         </div>
       </div>
+
+      <!-- Flèche droite -->
+      <button class="arrow right">›</button>
     </div>
   </div>
 </section>
@@ -363,8 +370,20 @@ includesItems.forEach(item => {
 
 </script>
  
+<script>
+  const track = document.getElementById('carousel-track');
+  const leftBtn = document.querySelector('.arrow.left');
+  const rightBtn = document.querySelector('.arrow.right');
+  const itemWidth = document.querySelector('.portfolio-item').offsetWidth + 32; // largeur + gap (32px si ton gap=2rem)
 
+  leftBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+  });
 
+  rightBtn.addEventListener('click', () => {
+    track.scrollBy({ left: itemWidth, behavior: 'smooth' });
+  });
+</script>
 
 
 
