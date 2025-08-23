@@ -93,7 +93,7 @@
           <img src="bls.png" alt="Création 1">
         </div>
         <div class="portfolio-item">
-          <img src="bls.jpg" alt="Création 2">
+          <img src="bls.png" alt="Création 2">
         </div>
         <div class="portfolio-item">
           <img src="creation3.jpg" alt="Création 3">
@@ -371,18 +371,18 @@ includesItems.forEach(item => {
 </script>
  
 <script>
-  const track = document.getElementById('carousel-track');
-  const leftBtn = document.querySelector('.arrow.left');
-  const rightBtn = document.querySelector('.arrow.right');
-  const itemWidth = document.querySelector('.portfolio-item').offsetWidth + 32; // largeur + gap (32px si ton gap=2rem)
+const track = document.getElementById('carousel-track');
+const leftBtn = document.querySelector('.arrow.left');
+const rightBtn = document.querySelector('.arrow.right');
 
-  leftBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-  });
+function scrollItem(direction) {
+  const item = document.querySelector('.portfolio-item');
+  const itemWidth = item.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap);
+  track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+}
 
-  rightBtn.addEventListener('click', () => {
-    track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-  });
+leftBtn.addEventListener('click', () => scrollItem(-1));
+rightBtn.addEventListener('click', () => scrollItem(1));
 </script>
 
 
