@@ -736,14 +736,14 @@ body, p, .section-subtitle, .footer-brand-text,
 
 .portfolio-track {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   scroll-behavior: smooth;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
   scroll-snap-type: x mandatory;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .portfolio-track::-webkit-scrollbar {
@@ -751,12 +751,12 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 .portfolio-item {
-  flex: 0 0 min(90%, 400px); /* largeur max 400px mais responsive */
+  flex: 0 0 400px; /* largeur fixe = rectangulaire */
   height: 250px;
   border-radius: 12px;
   overflow: hidden;
   scroll-snap-align: center;
-  background: #000;
+  background: #000; /* ou #fff si tu préfères */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -798,7 +798,6 @@ body, p, .section-subtitle, .footer-brand-text,
 .arrow.right {
   right: 0.5rem;
 }
-
 
 
 
