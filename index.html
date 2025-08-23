@@ -157,6 +157,9 @@
  </section>
 
 
+
+
+
 <section class="faq-section">
   <h2 class="faq-title">FAQ 💬</h2>
 
@@ -373,8 +376,8 @@ includesItems.forEach(item => {
  
 <script>
   const track = document.getElementById('carousel-track');
-  const leftBtn = document.querySelector('.arrow.left');
-  const rightBtn = document.querySelector('.arrow.right');
+  const leftBtn = document.querySelector('.portfolio-btn.left');
+  const rightBtn = document.querySelector('.portfolio-btn.right');
   const itemWidth = document.querySelector('.portfolio-item').offsetWidth + 32; // largeur + gap (32px si ton gap=2rem)
 
   leftBtn.addEventListener('click', () => {
@@ -385,6 +388,7 @@ includesItems.forEach(item => {
     track.scrollBy({ left: itemWidth, behavior: 'smooth' });
   });
 </script>
+
 
 
 
