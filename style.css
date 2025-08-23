@@ -772,7 +772,7 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 /* Flèches */
-.arrow {
+.portfolio-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -787,17 +787,18 @@ body, p, .section-subtitle, .footer-brand-text,
   transition: background 0.2s;
 }
 
-.arrow:hover {
+.portfolio-btn:hover {
   background: rgba(0,0,0,0.4);
 }
 
-.arrow.left {
+.portfolio-btn.left {
   left: 0.5rem;
 }
 
-.arrow.right {
+.portfolio-btn.right {
   right: 0.5rem;
 }
+
 
 
 
