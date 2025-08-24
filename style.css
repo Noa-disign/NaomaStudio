@@ -798,6 +798,9 @@ body, p, .section-subtitle, .footer-brand-text,
 .portfolio-btn.right {
   right: 0.5rem;
 }
+#portfolio {
+  margin-bottom: -4rem; /* tu réduis ici la marge externe */
+}
 
 
 
