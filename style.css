@@ -228,25 +228,35 @@ body, p, .section-subtitle, .footer-brand-text,
  }
 
  
-
-.service-card {
-  background: var(--gris-foncé);
-  border: 4px solid var(--accent);
-  border-radius: 18px;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 350px;
-  margin: 1.5rem auto;
+/* Police globale pour les cartes et boutons */
+.service-card,
+.service-card h3,
+.service-includes li,
+.option-buttons,
+.option-btn,
+.option-text {
+  font-family: 'Inter', Arial, sans-serif;
 }
 
+/* Cards */
+.service-card {
+  background: var(--bg-card);
+  border: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 350px;
+  margin: 1.5rem auto;
+  transition: var(--transition);
+}
 
 .service-icon {
   width: 60px;
   height: 60px;
   margin-bottom: 1.2rem;
   background: var(--accent);
-  color: white;
+  color: var(--text-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -274,7 +284,7 @@ body, p, .section-subtitle, .footer-brand-text,
 .service-includes {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 2rem 0;
   text-align: left;
   max-width: 320px;
   margin-left: auto;
@@ -289,6 +299,93 @@ body, p, .section-subtitle, .footer-brand-text,
   color: var(--text-secondary);
   font-size: 1.1rem;
 }
+
+/* Option buttons */
+.option-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: var(--radius);
+  background: var(--blanc-doux);
+  padding: 2px;
+  width: fit-content;
+  margin: 1.5rem auto;
+}
+
+.option-btn {
+  position: relative;
+  z-index: 2;
+  padding: 0.4rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: var(--bg-secondary);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+.option-btn:hover {
+  color: var(--bg-primary);
+}
+
+.option-btn.active {
+  color: var(--bg-primary);
+}
+
+/* Slider lumineux épuré */
+.option-slider {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 50%;
+  height: calc(100% - 4px);
+  background: rgba(139, 176, 255, 0.801);
+  border-radius: var(--radius);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Conteneur du texte */
+.option-content {
+  margin: 1.5rem auto;
+  max-width: 300px; /* largeur réduite pour le texte */
+  line-height: 1.6; /* espacement entre lignes pour lisibilité */
+  text-align: center; /* texte centré */
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* Texte principal */
+.option-text {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: -2.5rem !important;
+  margin-top: 2rem !important;
+}
+
+/* Gras pour l'accroche */
+.option-text strong {
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Parenthèses / note */
+.option-text em {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+
+
+
+
 
 
 

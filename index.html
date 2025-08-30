@@ -110,48 +110,51 @@
 
 
  <!-- Services Section -->
- <section id="services" class="section">
- <div class="container">
- <div class="section-header">
- <h2 class="section-title">MES SERVICES 😊</h2>
- </div>
-<div class="service-card">
-  <div class="service-icon">💻</div>
-  <h3>Site Vitrine</h3>
-  <span class="service-price">400€</span>
-  <ul class="service-includes">
-    <li>✔ Design responsive</li>
-    <li>✔ Réservation en ligne</li>
-    <li>✔ Optimisation SEO</li>
-    <li>✔ Hébergement sécurisé</li>
-  </ul>
-</div>
-<div class="service-card">
-  <div class="service-icon">💻</div>
-  <h3>Site Vitrine</h3>
-  <span class="service-price">400€</span>
-  <ul class="service-includes">
-    <li>✔ Design responsive</li>
-    <li>✔ Réservation en ligne</li>
-    <li>✔ Optimisation SEO</li>
-    <li>✔ Hébergement sécurisé</li>
-  </ul>
-</div>
-<div class="service-card">
-  <div class="service-icon">💻</div>
-  <h3>Site Vitrine</h3>
-  <span class="service-price">400€</span>
-  <ul class="service-includes">
-    <li>✔ Design responsive</li>
-    <li>✔ Réservation en ligne</li>
-    <li>✔ Optimisation SEO</li>
-    <li>✔ Hébergement sécurisé</li>
-  </ul>
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">MES SERVICES 😊</h2>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Site Vitrine</h3>
+      <span class="service-price">400€</span>
+      <ul class="service-includes">
+        <li>✔ Design responsive</li>
+        <li>✔ Réservation en ligne</li>
+        <li>✔ Optimisation SEO</li>
+        <li>✔ Hébergement sécurisé</li>
+      </ul>
+
+<div class="option-buttons">
+  <div class="option-slider"></div>
+  <button class="option-btn active" data-option="transfere">Option 1 : Autonome</button>
+  <button class="option-btn" data-option="gere">Option 2 : Tranquillité </button>
 </div>
 
- </div>
- </div>
- </section>
+<div class="option-content">
+  <p class="option-text" id="transfere">
+    <strong>Géré à 100% par vous ! </strong><br>
+    le site est entièrement autonome et vous pouvez tout modifier vous-même.<br>
+    <br>
+    <em>(si vous voulez être autonome et dépenser moins)</em>
+  </p>
+
+  <p class="option-text" id="gere" style="display:none;">
+    <strong>On s’occupe de tout ! </strong><br>
+    mises à jour, sauvegardes et sécurité incluses.<br>
+    <br>
+    <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
+  </p>
+</div>
+
+
+
+    <!-- Tu peux dupliquer la card pour d'autres services si besoin -->
+  </div>
+</section>
+
 
 
 
@@ -384,6 +387,28 @@ includesItems.forEach(item => {
   rightBtn.addEventListener('click', () => {
     track.scrollBy({ left: itemWidth, behavior: 'smooth' });
   });
+</script>
+
+<script>
+const buttons = document.querySelectorAll('.option-btn');
+const texts = document.querySelectorAll('.option-text');
+const slider = document.querySelector('.option-slider');
+
+buttons.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    // Gestion des boutons actifs
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Animation du slider
+    slider.style.left = `${index * 50}%`;
+
+    // Affichage du texte correspondant
+    texts.forEach(text => {
+      text.style.display = text.id === btn.dataset.option ? 'block' : 'none';
+    });
+  });
+});
 </script>
 
 
