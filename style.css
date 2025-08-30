@@ -799,7 +799,7 @@ body, p, .section-subtitle, .footer-brand-text,
   right: 0.5rem;
 }
 #portfolio {
-  margin-bottom: -4rem; /* tu réduis ici la marge externe */
+  margin-bottom: -1rem; /* tu réduis ici la marge externe */
 }
 
 
@@ -842,7 +842,7 @@ body, p, .section-subtitle, .footer-brand-text,
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
-            margin-bottom: 60px;
+            margin-bottom: 0px;
         }
 
 /* Footer H2 spécifique */
@@ -864,7 +864,7 @@ body, p, .section-subtitle, .footer-brand-text,
 .bit2-image {
     position: absolute;
     margin-top: 0px;
-    bottom: 347px; 
+    bottom: 291px; 
     left: 50%;    
     transform: translateX(-50%);
     z-index: 1;
