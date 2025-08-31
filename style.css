@@ -420,6 +420,12 @@ body, p, .section-subtitle, .footer-brand-text,
   transform: translateY(-3px);
 }
 
+/* Séparateur léger entre site et options */
+.service-options {
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* trait très léger */
+  padding-top: 1.5rem; /* espace au-dessus du trait */
+  margin-top: 1.5rem; /* espace entre le site et le trait */
+}
 
 
 
