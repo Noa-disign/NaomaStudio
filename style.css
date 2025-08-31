@@ -301,7 +301,7 @@ body, p, .section-subtitle, .footer-brand-text,
   margin: 0 0 2rem 0;
   text-align: left;
   max-width: 320px;
-  margin-left: 2.0rem;
+  margin-left: 1.3rem;
   margin-right: auto;
 }
 
@@ -311,7 +311,14 @@ body, p, .section-subtitle, .footer-brand-text,
   margin-bottom: 1rem;
   font-weight: 600;
   color: var(--text-secondary);
-  font-size: 0.98rem;
+  font-size: 1rem;
+}
+
+.service-includes li::before {
+  content: "✔"; /* ton icône */
+  margin-right: 0.5rem;
+  font-weight: bold;
+  color: inherit; /* prend la couleur du texte */
 }
 
 /* Option buttons */
