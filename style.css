@@ -414,26 +414,25 @@ body, p, .section-subtitle, .footer-brand-text,
   margin-bottom: 1rem;
 }
 
-/* Cartes indépendantes avec transfère plus marqué */
-#transfere-1 { 
-  background: rgba(139, 176, 255, 0.1);   /* fond léger */
-  border: 1px solid rgba(139, 176, 255, 0.8); /* contour marqué */
-}
 
-#gere-1 { 
-  background: rgba(79, 126, 255, 0.08); 
-  border: 1px solid rgba(79, 126, 255, 0.4); 
-}
+/* Cartes avec une vraie différence visuelle */
 
+/* TRANSFÈRE (Autonome) → bleu clair lumineux */
+#transfere-1, 
 #transfere-2 { 
-  background: rgba(139, 176, 255, 0.1); 
-  border: 1px solid rgba(139, 176, 255, 0.8); 
+  background: rgba(139, 176, 255, 0.2);   /* bleu clair affirmé */
+  border: 1px solid rgba(139, 176, 255, 0.9); /* contour net */
+  color: #ffffff; /* texte blanc pour lisibilité */
 }
 
+/* GÉRÉ (Tranquillité) → bleu foncé/violet doux */
+#gere-1, 
 #gere-2 { 
-  background: rgba(79, 126, 255, 0.08); 
-  border: 1px solid rgba(79, 126, 255, 0.4); 
+  background: rgba(79, 126, 255, 0.2);  /* bleu-violet plus foncé */
+  border: 1px solid rgba(79, 126, 255, 0.95); /* contour fort */
+  color: #ffffff; /* texte blanc pour lisibilité */
 }
+
 
 .option-content p.active {
   border-color: var(--accent);
