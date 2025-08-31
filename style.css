@@ -261,13 +261,13 @@ body, p, .section-subtitle, .footer-brand-text,
   border-color: rgba(252,186,101,0.8); /* orange pastel */
 }
 
-#service-icon {
+/* Emoji */
+.service-icon {
   font-size: 3rem; /* taille de l'emoji */
   display: block;
   margin: 0 auto 1rem;
-  transition: transform 0.3s ease; /* petit effet fluide si besoin */
+  transition: transform 0.3s ease;
 }
-
 
 .service-card h3 {
   font-size: 1.8rem;
@@ -282,19 +282,18 @@ body, p, .section-subtitle, .footer-brand-text,
   color: rgba(139,176,255,0.9); 
   margin-bottom: 2rem;
   display: inline-block;
-  transition: color 0.3s ease; /* animation fluide sur la couleur seulement */
+  transition: color 0.3s ease;
 }
 
 /* Prix Autonome */
 .service-price.autonome {
-  color: rgba(139,176,255,0.9); /* bleu premium */
+  color: rgba(139,176,255,0.9);
 }
 
 /* Prix Tranquillité */
 .service-price.tranquilite {
-  color: rgba(252,186,101,0.8); /* orange pastel */
+  color: rgba(252,186,101,0.8);
 }
-
 
 .service-includes {
   list-style: none;
@@ -349,7 +348,6 @@ body, p, .section-subtitle, .footer-brand-text,
   color: var(--bg-primary);
 }
 
-
 /* Slider lumineux épuré */
 .option-slider {
   position: absolute;
@@ -361,24 +359,23 @@ body, p, .section-subtitle, .footer-brand-text,
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  background: rgba(139, 176, 255, 0.8); /* couleur par défaut (bleu) */
+  background: rgba(139, 176, 255, 0.8); /* couleur par défaut */
 }
 
 /* Quand l’option Tranquillité est active → orange pastel */
 .option-slider.tranquilite {
-  background: rgba(252, 186, 101, 0.67); /* orange pastel */
+  background: rgba(252, 186, 101, 0.67);
 }
 
 /* Conteneur du texte */
 .option-content {
   margin: 1.5rem auto;
-  max-width: 300px; /* largeur réduite pour le texte */
-  line-height: 1.6; /* espacement entre lignes pour lisibilité */
-  text-align: center; /* texte centré */
+  max-width: 300px;
+  line-height: 1.6;
+  text-align: center;
   font-family: 'Inter', Arial, sans-serif;
 }
 
-/* Texte principal */
 .option-text {
   font-size: 1rem;
   color: var(--text-primary);
@@ -386,14 +383,12 @@ body, p, .section-subtitle, .footer-brand-text,
   margin-top: 2rem !important;
 }
 
-/* Gras pour l'accroche */
 .option-text strong {
   font-size: 1.05rem;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-/* Parenthèses / note */
 .option-text em {
   display: block;
   font-size: 0.9rem;
@@ -403,34 +398,28 @@ body, p, .section-subtitle, .footer-brand-text,
   line-height: 1.4;
 }
 
-/* Style global des encadrés */
 .option-content p {
   border: 1px solid var(--border);
   padding: 1rem;
   border-radius: var(--radius);
   transition: var(--transition);
-  background: #111; /* base sombre */
+  background: #111;
   margin-bottom: 1rem;
 }
 
-/* Autonome = bleu très léger */
-#transfere {
-  background: rgba(139,176,255,0.05);
-  border: 1px solid rgba(139,176,255,0.3);
-}
+/* Cartes indépendantes pour deux cartes */
+#transfere-1 { background: rgba(139,176,255,0.05); border: 1px solid rgba(139,176,255,0.3); }
+#gere-1 { background: rgba(255, 173, 135, 0.08); border: 1px solid rgba(255, 160, 116, 0.3); }
 
-/* Tranquillité = bleu violacé doux */
-#gere {
-  background: rgba(255, 173, 135, 0.08);
-  border: 1px solid rgba(255, 160, 116, 0.3);
-}
+#transfere-2 { background: rgba(139,176,255,0.05); border: 1px solid rgba(139,176,255,0.3); }
+#gere-2 { background: rgba(255, 173, 135, 0.08); border: 1px solid rgba(255, 160, 116, 0.3); }
 
-/* Quand une option est active → la faire ressortir */
 .option-content p.active {
   border-color: var(--accent);
   box-shadow: 0 8px 20px rgba(139,176,255,0.2);
   transform: translateY(-3px);
 }
+
 
 
 

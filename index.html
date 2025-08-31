@@ -108,48 +108,84 @@
 
 
 
-
- <!-- Services Section -->
+<!-- Services Section -->
 <section id="services" class="section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">MES SERVICES 😊</h2>
     </div>
 
-<div class="service-card">
-<div class="service-icon" id="service-icon">💻</div>
+    <!-- Carte 1 -->
+    <div class="service-card">
+      <div class="service-icon" id="service-icon-1">🛠️</div>
+      <h3>SITE VITRINE</h3>
+      <span class="service-price" id="service-price-1">990€</span>
+      <ul class="service-includes">
+        <li>✔ Design responsive</li>
+        <li>✔ Réservation en ligne</li>
+        <li>✔ Optimisation SEO</li>
+        <li>✔ Hébergement sécurisé</li>
+      </ul>
 
-  <h3>SITE VITRINE</h3>
-  <span class="service-price" id="service-price">400€</span>
-  <ul class="service-includes">
-    <li>✔ Design responsive</li>
-    <li>✔ Réservation en ligne</li>
-    <li>✔ Optimisation SEO</li>
-    <li>✔ Hébergement sécurisé</li>
-  </ul>
+      <div class="option-buttons">
+        <div class="option-slider"></div>
+        <button class="option-btn active" data-option="transfere-1">Autonome</button>
+        <button class="option-btn" data-option="gere-1">Tranquillité</button>
+      </div>
 
-  <div class="option-buttons">
-    <div class="option-slider"></div>
-    <button class="option-btn active" data-option="transfere">Autonome</button>
-    <button class="option-btn" data-option="gere">Tranquillité</button>
+      <div class="option-content">
+        <p class="option-text" id="transfere-1">
+          <strong>GÉRÉ À 100% PAR VOUS !</strong><br>
+          le site est entièrement autonome et vous pouvez tout modifier vous-même.<br><br>
+          <em>(si vous voulez être autonome et dépenser moins)</em>
+        </p>
+
+        <p class="option-text" id="gere-1" style="display:none;">
+          <strong>ON S’OCCUPE DE TOUT !</strong><br>
+          mises à jour, sauvegardes et sécurité incluses.<br><br>
+          <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- Carte 2 -->
+    <div class="service-card">
+      <div class="service-icon" id="service-icon-2">🛠️</div>
+      <h3>SITE DYNAMIQUE</h3>
+      <span class="service-price" id="service-price-2">1490€</span>
+      <ul class="service-includes">
+        <li>✔ Design responsive</li>
+        <li>✔ Paiement en ligne</li>
+        <li>✔ Optimisation SEO</li>
+        <li>✔ Hébergement sécurisé</li>
+      </ul>
+
+      <div class="option-buttons">
+        <div class="option-slider"></div>
+        <button class="option-btn active" data-option="transfere-2">Autonome</button>
+        <button class="option-btn" data-option="gere-2">Tranquillité</button>
+      </div>
+
+      <div class="option-content">
+        <p class="option-text" id="transfere-2">
+          <strong>GÉRÉ À 100% PAR VOUS !</strong><br>
+          le site est entièrement autonome et vous pouvez tout modifier vous-même.<br><br>
+          <em>(si vous voulez être autonome et dépenser moins)</em>
+        </p>
+
+        <p class="option-text" id="gere-2" style="display:none;">
+          <strong>ON S’OCCUPE DE TOUT !</strong><br>
+          mises à jour, sauvegardes et sécurité incluses.<br><br>
+          <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
+        </p>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <div class="option-content">
-    <p class="option-text" id="transfere">
-      <strong>GÉRÉ À 100% PAR VOUS !</strong><br>
-      le site est entièrement autonome et vous pouvez tout modifier vous-même.<br>
-      <br>
-      <em>(si vous voulez être autonome et dépenser moins)</em>
-    </p>
 
-    <p class="option-text" id="gere" style="display:none;">
-      <strong>ON S’OCCUPE DE TOUT !</strong><br>
-      mises à jour, sauvegardes et sécurité incluses.<br>
-      <br>
-      <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
-    </p>
-  </div>
-</div>
+
 
 
 
@@ -393,43 +429,55 @@ includesItems.forEach(item => {
 </script>
 
 <script>
-const buttons = document.querySelectorAll(".option-btn");
-const slider = document.querySelector(".option-slider");
-const texts = document.querySelectorAll(".option-text");
-const price = document.getElementById("service-price");
-const card = document.querySelector(".service-card");
-const icon = document.getElementById("service-icon");
+// Fonction pour initialiser une carte
+function setupCard(cardNumber) {
+  const card = document.querySelector(`#service-icon-${cardNumber}`).closest(".service-card");
+  const buttons = card.querySelectorAll(".option-btn");
+  const slider = card.querySelector(".option-slider");
+  const texts = card.querySelectorAll(".option-text");
+  const price = card.querySelector(".service-price");
+  const icon = card.querySelector(`#service-icon-${cardNumber}`);
 
-buttons.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    const option = btn.dataset.option;
+  buttons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const option = btn.dataset.option;
 
-    // bouton actif
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+      // bouton actif
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-    // slider position et couleur
-    slider.style.left = index * 50 + "%";
-    slider.classList.toggle("tranquilite", option === "gere");
+      // slider position et couleur
+      slider.style.left = index * 50 + "%";
+      slider.classList.toggle("tranquilite", option.includes("gere"));
 
-    // texte affiché
-    texts.forEach(t => (t.style.display = "none"));
-    document.getElementById(option).style.display = "block";
+      // texte affiché
+      texts.forEach(t => (t.style.display = "none"));
+      document.getElementById(option).style.display = "block";
 
-    // prix
-    price.textContent = option === "transfere" ? "990€" : "690€";
-    price.classList.toggle("autonome", option === "transfere");
-    price.classList.toggle("tranquilite", option === "gere");
+      // prix
+      if(option.includes("transfere")) {
+        price.textContent = cardNumber === "1" ? "990€" : "1490€"; // tu peux ajuster les prix par carte
+        price.classList.add("autonome");
+        price.classList.remove("tranquilite");
+      } else {
+        price.textContent = cardNumber === "1" ? "690€" : "900€";
+        price.classList.add("tranquilite");
+        price.classList.remove("autonome");
+      }
 
-    // card contour
-    card.classList.toggle("autonome", option === "transfere");
-    card.classList.toggle("tranquilite", option === "gere");
+      // card contour
+      card.classList.toggle("autonome", option.includes("transfere"));
+      card.classList.toggle("tranquilite", option.includes("gere"));
 
-    // emoji
-    icon.textContent = option === "transfere" ? "🛠️" : "🤝";
+      // emoji
+      icon.textContent = option.includes("transfere") ? "🛠️" : "🤝";
+    });
   });
-});
+}
 
+// Initialisation pour les deux cartes
+setupCard("1");
+setupCard("2");
 </script>
 
 
