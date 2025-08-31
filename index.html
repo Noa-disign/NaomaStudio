@@ -455,6 +455,7 @@ function setupCard(cardNumber) {
   const price = card.querySelector(".service-price");
   const icon = card.querySelector(`#service-icon-${cardNumber}`);
 
+  // Gestion du clic sur les boutons d'option
   buttons.forEach((btn, index) => {
     btn.addEventListener("click", () => {
       const option = btn.dataset.option;
@@ -473,7 +474,7 @@ function setupCard(cardNumber) {
 
       // prix
       if(option.includes("transfere")) {
-        price.textContent = cardNumber === "1" ? "990€" : "1490€"; // tu peux ajuster les prix par carte
+        price.textContent = cardNumber === "1" ? "990€" : "1490€";
         price.classList.add("autonome");
         price.classList.remove("tranquilite");
       } else {
@@ -485,7 +486,17 @@ function setupCard(cardNumber) {
       // card contour
       card.classList.toggle("autonome", option.includes("transfere"));
       card.classList.toggle("tranquilite", option.includes("gere"));
+    });
+  });
 
+  // Gestion du clic sur les éléments li pour changer la couleur
+  const includesItems = card.querySelectorAll('.service-includes li');
+  includesItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // On remet tous les autres li en blanc
+      includesItems.forEach(i => i.classList.remove('checked'));
+      // On met celui cliqué en bleu
+      item.classList.add('checked');
     });
   });
 }

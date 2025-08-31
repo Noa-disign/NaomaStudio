@@ -314,12 +314,32 @@ body, p, .section-subtitle, .footer-brand-text,
   font-size: 1rem;
 }
 
+.service-includes li {
+  color: #ffffff; /* texte par défaut */
+  cursor: pointer;
+}
+
 .service-includes li::before {
-  content: "✔"; /* ton icône */
+  content: "✔";
   margin-right: 0.5rem;
   font-weight: bold;
-  color: inherit; /* prend la couleur du texte */
+  color: #ffffff; /* couleur par défaut */
+  transition: color 0.3s ease;
 }
+
+/* Quand le li est cliqué */
+.service-includes li.checked {
+  color: var(--accent); /* texte cliqué */
+}
+
+.service-includes li.checked::before {
+  color: var(--accent); /* ✔ devient aussi bleu */
+}
+
+
+
+
+
 
 /* Option buttons */
 .option-buttons {
