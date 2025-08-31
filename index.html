@@ -117,7 +117,9 @@
 
     <!-- Carte 1 -->
     <div class="service-card">
-      <div class="service-icon" id="service-icon-1">🛠️</div>
+      <div class="service-icon" id="service-icon-1">
+  <img src="bit4.png"  style="width:140px; margin-top: -1rem;">
+</div>
       <h3>SITE VITRINE</h3>
       <span class="service-price" id="service-price-1">990€</span>
       <ul class="service-includes">
@@ -150,7 +152,9 @@
 
     <!-- Carte 2 -->
     <div class="service-card">
-      <div class="service-icon" id="service-icon-2">🛠️</div>
+            <div class="service-icon" id="service-icon-1">
+  <img src="bit6.png"  style="width:80px; margin-top: -1rem;">
+</div>
       <h3>SITE DYNAMIQUE</h3>
       <span class="service-price" id="service-price-2">1490€</span>
       <ul class="service-includes">
@@ -469,8 +473,6 @@ function setupCard(cardNumber) {
       card.classList.toggle("autonome", option.includes("transfere"));
       card.classList.toggle("tranquilite", option.includes("gere"));
 
-      // emoji
-      icon.textContent = option.includes("transfere") ? "🛠️" : "🤝";
     });
   });
 }
