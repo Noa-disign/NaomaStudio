@@ -240,7 +240,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 /* Cards */
 .service-card {
-  background: var(--bg-card);
+  background: var(--gris-foncé);
   border: 4px solid var(--accent); /* couleur par défaut */
   border-radius: 18px;
   padding: 3rem 1.5rem;
