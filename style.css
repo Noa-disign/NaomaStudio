@@ -1265,7 +1265,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 .faq-section {
-  max-width: 350px; /* largeur encore plus compacte */
+  max-width: 360px; /* largeur encore plus compacte */
   margin: auto;
   padding: 35px 15px; /* marges réduites */
   font-family: 'Inter', Arial, sans-serif;
@@ -1302,7 +1302,7 @@ body, p, .section-subtitle, .footer-brand-text,
   font-weight: 700;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   cursor: pointer;
   color: var(--text-primary);
   transition: color 0.3s ease;
