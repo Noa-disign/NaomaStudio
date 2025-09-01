@@ -253,7 +253,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 /* Contour Autonome */
 .service-card.autonome {
-  border-color: rgba(139,176,255,0.9); /* bleu premium */
+  border-color: var(--accent); /* bleu premium */
 }
 
 /* Contour Tranquillité */
@@ -279,7 +279,7 @@ body, p, .section-subtitle, .footer-brand-text,
 .service-price {
   font-size: 2.5rem; /* taille fixe */
   font-weight: 900;
-  color: rgba(139,176,255,0.9); 
+  color: var(--accent); 
   margin-bottom: 2rem;
   display: inline-block;
   transition: color 0.3s ease;
@@ -287,7 +287,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 /* Prix Autonome */
 .service-price.autonome {
-  color: rgba(139,176,255,0.9);
+  color: var(--accent);
 }
 
 /* Prix Tranquillité */
@@ -386,7 +386,7 @@ body, p, .section-subtitle, .footer-brand-text,
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  background: rgba(139, 176, 255, 0.8); /* couleur par défaut */
+  background: var(--accent); /* couleur par défaut */
 }
 
 /* Quand l’option Tranquillité est active → orange pastel */
@@ -441,7 +441,7 @@ body, p, .section-subtitle, .footer-brand-text,
 #transfere-1, 
 #transfere-2 { 
   background: rgba(139, 176, 255, 0.2);   /* bleu clair affirmé */
-  border: 1px solid rgba(139, 176, 255, 0.9); /* contour net */
+  border: 1px solid var(--accent); /* contour net */
   color: #ffffff; /* texte blanc pour lisibilité */
 }
 
@@ -720,7 +720,7 @@ body, p, .section-subtitle, .footer-brand-text,
 :root {
  --violet-clair: hwb(194 0% 0%);
  --violet-rose: #81a9ff;
- --noir-nuit: #4f7eff;
+ --noir-nuit: #1786ff;
  --blanc-doux: #F9F9FB;
  --gris-foncé:  rgb(15, 15, 15);
  --rayon: 18px;
