@@ -341,6 +341,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
+
 /* Option buttons */
 .option-buttons {
   position: relative;
@@ -351,7 +352,11 @@ body, p, .section-subtitle, .footer-brand-text,
   padding: 2px;
   width: fit-content;
   margin: 1.5rem auto;
+  margin-top: 0rem;
 }
+
+
+
 
 .option-btn {
   position: relative;
@@ -402,6 +407,11 @@ body, p, .section-subtitle, .footer-brand-text,
   text-align: center;
   font-family: 'Inter', Arial, sans-serif;
 }
+
+
+
+
+
 
 .option-text {
   font-size: 1rem;

@@ -176,18 +176,3 @@
             }
         }
 
-/* Bouton retour ultra épuré */
-.back-btn {
-    display: inline-block;
-    margin: 15px 0 1px 15px; /* réduit le bottom */
-    padding: 4px 10px;
-    border-radius: 8px;
-    color: var(--accent);
-    font-size: 18px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.back-btn:hover {
-    color: var(--text-secondary);
-}
