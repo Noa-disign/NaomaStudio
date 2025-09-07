@@ -13,23 +13,33 @@
 
 </head>
 <body>
- <!-- Navigation -->
- <nav class="navbar">
- <div class="nav-container">
- <a href="#" class="logo">Noa.webstudio</a>
- <ul class="nav-menu">
- <li><a href="#services">Services</a></li>
- <li><a href="#about">À propos</a></li>
- <li><a href="#testimonials">Avis clients</a></li>
- <li><a href="#contact">Contact</a></li>
- </ul>
- <div class="mobile-menu">
- <span></span>
- <span></span>
- <span></span>
- </div>
- </div>
- </nav>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <img src="LOGO TEXTE.svg" alt="Logo premium" class="logo-main">
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#testimonials">Avis clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Bouton premium -->
+<button class="nav-button">
+  <span>Contact</span>
+</button>
+
+    <div class="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
 
 <div class="logo-header">
   <div class="logo-container">
@@ -57,22 +67,31 @@
 
   <div class="marquee-bar">
     <div class="marquee-track">
-        <span>Rentable</span>
-        <span>Fiable</span>
-        <span>Unique</span>
-        <span>Professionnel</span>
-        <span>Impactant</span>
-        <span>Créatif</span>
-        <!-- Duplicata pour boucle infinie -->
-        <span>Rentable</span>
-        <span>Fiable</span>
-        <span>Unique</span>
-        <span>Professionnel</span>
-        <span>Impactant</span>
-        <span>Créatif</span>
+      <span>Rentable</span>
+      <span>Fiable</span>
+      <span>Unique</span>
+      <span>Professionnel</span>
+      <span>Impactant</span>
+      <span>Créatif</span>
+      
+      <!-- Répétition pour boucle infinie parfaite -->
+      <span>Rentable</span>
+      <span>Fiable</span>
+      <span>Unique</span>
+      <span>Professionnel</span>
+      <span>Impactant</span>
+      <span>Créatif</span>
+
+      <span>Rentable</span>
+      <span>Fiable</span>
+      <span>Unique</span>
+      <span>Professionnel</span>
+      <span>Impactant</span>
+      <span>Créatif</span>
     </div>
   </div>
 </div>
+
 
 
 
@@ -115,81 +134,110 @@
       <h2 class="section-title">MES SERVICES 😊</h2>
     </div>
 
-    <!-- Carte 1 -->
-    <div class="service-card">
-      <!-- Partie Site -->
-      <div class="service-site">
-        <div class="service-icon" id="service-icon-1">
-          <img src="bit4.png" style="width:123px; margin-top: -1rem; margin-bottom: -1.1rem;">
+    <!-- Conteneur des cartes -->
+    <div class="services-container">
+
+      <!-- Carte 1 : SITE VITRINE -->
+      <div class="service-card">
+        <div class="service-site">
+          <div class="service-icon" id="service-icon-1">
+            <img src="bit4.png" style="width:123px; margin-top: -1rem; margin-bottom: -1.1rem;">
+          </div>
+          <h3>SITE VITRINE</h3>
+          <span class="service-price" id="service-price-1">990€</span>
+          <ul class="service-includes">
+            <li>Design responsive</li>
+            <li>Réservation en ligne</li>
+            <li>Optimisation SEO</li>
+            <li>Hébergement sécurisé</li>
+          </ul>
         </div>
-        <h3>SITE VITRINE</h3>
-        <span class="service-price" id="service-price-1">990€</span>
-        <ul class="service-includes">
-          <li> Design responsive</li>
-          <li> Réservation en ligne</li>
-          <li> Optimisation SEO</li>
-          <li> Hébergement sécurisé</li>
-        </ul>
+
+        <!-- Bloc "ON S’OCCUPE DE TOUT !" -->
+        <div class="service-options">
+          <div class="option-content">
+            <p class="option-text" id="gere-1">
+              <strong>ON S’OCCUPE DE TOUT !</strong><br>
+              mises à jour, sauvegardes et sécurité incluses.<br><br>
+              <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
+            </p>
+          </div>
+        </div>
       </div>
 
-  <!-- Partie Tranquillité uniquement, rapprochée -->
-  <div class="service-options" style="margin-top: 0; padding-top: 0;">
-    <div class="option-content" style="margin: 1 auto; margin-top: 0.3rem;">
-      <p class="option-text" id="gere-1"> 
-        <strong>ON S’OCCUPE DE TOUT !</strong><br>
-        mises à jour, sauvegardes et sécurité incluses.<br><br>
-        <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
-      </p>
-    </div>
-  </div>
-</div>
-
-    <!-- Carte 2 -->
-    <div class="service-card">
-      <!-- Partie Site -->
-      <div class="service-site">
-        <div class="service-icon" id="service-icon-2">
-          <img src="bit6.png" style="width:85px; margin-top: -1rem; margin-bottom: -1.1rem;">
+      <!-- Carte 2 : SITE DYNAMIQUE -->
+      <div class="service-card">
+        <div class="service-site">
+          <div class="service-icon" id="service-icon-2">
+            <img src="bit6.png" style="width:85px; margin-top: -1rem; margin-bottom: -1.1rem;">
+          </div>
+          <h3>SITE DYNAMIQUE</h3>
+          <span class="service-price" id="service-price-2">1490€</span>
+          <ul class="service-includes">
+            <li>Design responsive</li>
+            <li>Paiement en ligne</li>
+            <li>Optimisation SEO</li>
+            <li>Hébergement sécurisé</li>
+          </ul>
         </div>
-        <h3>SITE DYNAMIQUE</h3>
-        <span class="service-price" id="service-price-2">1490€</span>
-        <ul class="service-includes">
-          <li> Design responsive</li>
-          <li> Paiement en ligne</li>
-          <li> Optimisation SEO</li>
-          <li> Hébergement sécurisé</li>
-        </ul>
+
+        <!-- Bloc options pour mobile seulement -->
+        <div class="service-options mobile-only">
+          <div class="option-buttons">
+            <div class="option-slider"></div>
+            <button class="option-btn active" data-option="transfere-2">Autonome</button>
+            <button class="option-btn" data-option="gere-2">Tranquillité</button>
+          </div>
+
+          <div class="option-content">
+            <p class="option-text" id="transfere-2">
+              <strong>GÉRÉ À 100% PAR VOUS !</strong><br>
+              le site est entièrement autonome et vous pouvez tout modifier vous-même.<br><br>
+              <em>(si vous voulez être autonome et dépenser moins)</em>
+            </p>
+
+            <p class="option-text" id="gere-2" style="display:none;">
+              <strong>ON S’OCCUPE DE TOUT !</strong><br>
+              mises à jour, sauvegardes et sécurité incluses.<br><br>
+              <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- Partie Options -->
-      <div class="service-options">
-        <div class="option-buttons">
-          <div class="option-slider"></div>
-          <button class="option-btn active" data-option="transfere-2">Autonome</button>
-          <button class="option-btn" data-option="gere-2">Tranquillité</button>
+      
+      <!-- Carte 2 duplicata : SITE DYNAMIQUE (desktop only) -->
+      <div class="service-card duplicate-desktop">
+        <div class="service-site">
+          <div class="service-icon" id="service-icon-2b">
+            <img src="bit6.png" style="width:85px; margin-top: -1rem; margin-bottom: -1.1rem;">
+          </div>
+          <h3>SITE DYNAMIQUE</h3>
+          <span class="service-price" id="service-price-2b">1490€</span>
+          <ul class="service-includes">
+            <li>Design responsive</li>
+            <li>Paiement en ligne</li>
+            <li>Optimisation SEO</li>
+            <li>Hébergement sécurisé</li>
+          </ul>
         </div>
 
-        <div class="option-content">
-          <p class="option-text" id="transfere-2">
-            <strong>GÉRÉ À 100% PAR VOUS !</strong><br>
-            le site est entièrement autonome et vous pouvez tout modifier vous-même.<br><br>
-            <em>(si vous voulez être autonome et dépenser moins)</em>
-          </p>
+        <!-- Bloc "ON S’OCCUPE DE TOUT !" uniquement desktop sous cette carte -->
+        <div class="service-options desktop-only">
+          <div class="option-content">
+            <p class="option-text" id="gere-2b">
+              <strong>ON S’OCCUPE DE TOUT !</strong><br>
+              mises à jour, sauvegardes et sécurité incluses.<br><br>
+              <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
+            </p>
+          </div>
+        </div>
+      </div>
 
-          <p class="option-text" id="gere-2" style="display:none;">
-            <strong>ON S’OCCUPE DE TOUT !</strong><br>
-            mises à jour, sauvegardes et sécurité incluses.<br><br>
-            <em>(pour rester tranquille et vous consacrer pleine
-
-
-
-
-
-
-
-    <!-- Tu peux dupliquer la card pour d'autres services si besoin -->
-  </div>
+    </div> <!-- /services-container -->
+  </div> <!-- /container -->
 </section>
+
 
 
 
