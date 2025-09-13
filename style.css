@@ -1042,6 +1042,7 @@ body, p, .section-subtitle, .footer-brand-text,
   position: relative;
   overflow: hidden;
   padding: 1rem 0;
+  margin-top: -2.5rem;
 }
 
 .portfolio-track {
@@ -1459,6 +1460,8 @@ body, p, .section-subtitle, .footer-brand-text,
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
   border: 2px solid hsl(0, 0%, 18%); /* contour bleu */
   margin: 50px auto;  /* centre horizontalement */
+  margin-bottom: 1rem;
+  margin-top: 2rem;
   cursor: pointer;
   /* supprime la transition sur le hover */
 }
@@ -1466,7 +1469,6 @@ body, p, .section-subtitle, .footer-brand-text,
 /* supprime l'effet survol */
 .profile-card:hover {
   transform: none;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
 }
 
 /* Photo carrée avec coins arrondis */
@@ -2196,14 +2198,21 @@ body, p, .section-subtitle, .footer-brand-text,
   text-align: center;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
   margin-top: 50px;     
-  margin-right: 80px;   
+  margin-right: 120px;   
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .profile-card:hover {
   transform: translateY(-5px) scale(1.02);  /* léger relief */
-  box-shadow: 0 15px 30px rgba(0,0,0,0.4); /* ombre plus forte */
+}
+
+
+/* Pour écrans larges (PC) */
+@media (min-width: 1200px) {
+  .profile-card {
+    margin-right: 300px;     /* plus besoin de marge droite énorme */
+  }
 }
 
 /* Photo carrée avec coins arrondis */
@@ -2394,7 +2403,7 @@ body, p, .section-subtitle, .footer-brand-text,
   .cta-button {
     font-size: 1.15rem;
     padding: 16px 32px;
-    margin-top: 280px;
+    margin-top: 210px;
   }
 
   .footer-contacts {
