@@ -2045,6 +2045,22 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Portfolio pleine largeur - Version moderne */
 .portfolio-carousel {
   --spacing: clamp(1rem, 4vw, 2rem);
@@ -2198,7 +2214,7 @@ body, p, .section-subtitle, .footer-brand-text,
   text-align: center;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
   margin-top: 50px;     
-  margin-right: 120px;   
+  margin-right: 120px !important;   
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -2209,7 +2225,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 /* Pour écrans larges (PC) */
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .profile-card {
     margin-right: 300px;     /* plus besoin de marge droite énorme */
   }
