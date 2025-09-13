@@ -9,6 +9,8 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -55,7 +57,7 @@
 <h1 class="hero-title">
   VOTRE <span class="highlight">PRÉSENCE EN LIGNE</span> SUR-MESURE
 </h1>
- <p class="hero-subtitle" style="margin-top:.5rem;">Je crée des sites internet sur-mesure pour valoriser votre activité, présenter vos services et offrir une expérience client simple et agréable.</p>
+ <p class="hero-subtitle" style="margin-top:.5rem;">Je crée des sites internet sur-mesure qui attirent plus de clients, renforcent votre image professionnelle et simplifient la prise de contact.</p>
  </a>
  </div>
 </section>
@@ -137,33 +139,49 @@
     <!-- Conteneur des cartes -->
     <div class="services-container">
 
-      <!-- Carte 1 : SITE VITRINE -->
-      <div class="service-card">
-        <div class="service-site">
-          <div class="service-icon" id="service-icon-1">
-            <img src="bit4.png" style="width:123px; margin-top: -1rem; margin-bottom: -1.1rem;">
-          </div>
-          <h3>SITE VITRINE</h3>
-          <span class="service-price" id="service-price-1">990€</span>
-          <ul class="service-includes">
-            <li>Design responsive</li>
-            <li>Réservation en ligne</li>
-            <li>Optimisation SEO</li>
-            <li>Hébergement sécurisé</li>
-          </ul>
-        </div>
+<!-- Carte 1 : SITE VITRINE -->
+<div class="service-card">
+  <div class="service-site">
+    <div class="service-icon" id="service-icon-1">
+      <img src="bit4.png" style="width:123px; margin-top: -1rem; margin-bottom: -1.1rem;">
+    </div>
+    <h3>SITE VITRINE</h3>
+<span class="service-subtext">à partir de</span>
+<span class="service-price" id="service-price-1">600€</span>
+    <ul class="service-includes">
+      <li>Design responsive</li>
+      <li>Réservation en ligne</li>
+      <li>Optimisation SEO</li>
+      <li>Hébergement sécurisé</li>
+    </ul>
+  </div>
 
-        <!-- Bloc "ON S’OCCUPE DE TOUT !" -->
-        <div class="service-options">
-          <div class="option-content">
-            <p class="option-text" id="gere-1">
-              <strong>ON S’OCCUPE DE TOUT !</strong><br>
-              mises à jour, sauvegardes et sécurité incluses.<br><br>
-              <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
-            </p>
-          </div>
-        </div>
-      </div>
+  <!-- Bloc options pour mobile seulement -->
+  <div class="service-options mobile-only">
+    <div class="option-buttons">
+      <div class="option-slider"></div>
+      <button class="option-btn active" data-option="transfere-1">Autonome</button>
+      <button class="option-btn" data-option="gere-1">Tranquillité</button>
+    </div>
+
+    <div class="option-content">
+      <p class="option-text" id="transfere-1">
+        <strong>GÉRABLE PAR VOUS !</strong><br>
+        Un site vitrine à votre image et professionnel, non modifiable ou avec modifications limitées <br><br>
+        <em>(pour une présence en ligne sans prise de tête)</em>
+      </p>
+
+      <p class="option-text" id="gere-1" style="display:none;">
+        <strong>ON S’OCCUPE DE TOUT !</strong><br>
+        Un site vitrine à votre image et professionnel : mises à jour, sauvegarde, hébergement… on s’occupe de tout ! <br><br>
+        <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
 
       <!-- Carte 2 : SITE DYNAMIQUE -->
       <div class="service-card">
@@ -172,7 +190,8 @@
             <img src="bit6.png" style="width:85px; margin-top: -1rem; margin-bottom: -1.1rem;">
           </div>
           <h3>SITE DYNAMIQUE</h3>
-          <span class="service-price" id="service-price-2">1490€</span>
+<span class="service-subtext">à partir de</span>
+<span class="service-price" id="service-price-2">1000€</span>
           <ul class="service-includes">
             <li>Design responsive</li>
             <li>Paiement en ligne</li>
@@ -181,7 +200,7 @@
           </ul>
         </div>
 
-        <!-- Bloc options pour mobile seulement -->
+
         <div class="service-options mobile-only">
           <div class="option-buttons">
             <div class="option-slider"></div>
@@ -192,13 +211,13 @@
           <div class="option-content">
             <p class="option-text" id="transfere-2">
               <strong>GÉRÉ À 100% PAR VOUS !</strong><br>
-              le site est entièrement autonome et vous pouvez tout modifier vous-même.<br><br>
-              <em>(si vous voulez être autonome et dépenser moins)</em>
+              Un site dynamique, entièrement autonome et modifiable par vous.<br><br>
+              <em>(Pour être autonome et garder le contrôle)</em>
             </p>
 
             <p class="option-text" id="gere-2" style="display:none;">
               <strong>ON S’OCCUPE DE TOUT !</strong><br>
-              mises à jour, sauvegardes et sécurité incluses.<br><br>
+              Un site dynamique, à votre image et professionnel : mises à jour, sauvegarde, hébergement… on s’occupe de tout !<br><br>
               <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
             </p>
           </div>
@@ -206,34 +225,7 @@
       </div>
 
       
-      <!-- Carte 2 duplicata : SITE DYNAMIQUE (desktop only) -->
-      <div class="service-card duplicate-desktop">
-        <div class="service-site">
-          <div class="service-icon" id="service-icon-2b">
-            <img src="bit6.png" style="width:85px; margin-top: -1rem; margin-bottom: -1.1rem;">
-          </div>
-          <h3>SITE DYNAMIQUE</h3>
-          <span class="service-price" id="service-price-2b">1490€</span>
-          <ul class="service-includes">
-            <li>Design responsive</li>
-            <li>Paiement en ligne</li>
-            <li>Optimisation SEO</li>
-            <li>Hébergement sécurisé</li>
-          </ul>
-        </div>
-
-        <!-- Bloc "ON S’OCCUPE DE TOUT !" uniquement desktop sous cette carte -->
-        <div class="service-options desktop-only">
-          <div class="option-content">
-            <p class="option-text" id="gere-2b">
-              <strong>ON S’OCCUPE DE TOUT !</strong><br>
-              mises à jour, sauvegardes et sécurité incluses.<br><br>
-              <em>(pour rester tranquille et vous consacrer pleinement à votre activité)</em>
-            </p>
-          </div>
-        </div>
-      </div>
-
+    
     </div> <!-- /services-container -->
   </div> <!-- /container -->
 </section>
@@ -244,53 +236,82 @@
 
 
 
-<section class="faq-section">
-  <h2 class="faq-title">FAQ 💬</h2>
+<section class="faq-wrapper" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin: 4rem 0;">
 
-  <div class="faq-item">
-    <button class="faq-question">
-      🚀 Comment démarrer un projet avec moi ? <span class="arrow">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>N’hésitez pas à me contacter par mail, WhatsApp ou via mon site. Nous discuterons de vos besoins et je réaliserai un devis adapté.</p>
+  <!-- FAQ à gauche -->
+  <div class="faq-section" style="flex: 1 1 500px; max-width: 700px;">
+    <h2 class="faq-title">FAQ 💬</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">🚀 Comment démarrer un projet avec moi ? <span class="arrow">+</span></button>
+      <div class="faq-answer">
+        <p>N’hésitez pas à me contacter par mail, WhatsApp ou via mon site. Nous discuterons de vos besoins et je réaliserai un devis adapté.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">🌐 Avec qui je travaille ? <span class="arrow">+</span></button>
+      <div class="faq-answer">
+        <p>Je travaille avec tous types d’entreprises : indépendants, petites, moyennes et grandes structures.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">💼 Comment se déroule ma prestation ? <span class="arrow">+</span></button>
+      <div class="faq-answer">
+        <p>Un projet se déroule en plusieurs étapes : d’abord, nous discutons de vos besoins et définissons le cahier des charges. Ensuite, je crée une maquette que vous validez. Puis vient le développement final avec les ajustements nécessaires, pour terminer le projet selon les services demandés.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">💳 Comment se passe le règlement ? <span class="arrow">+</span></button>
+      <div class="faq-answer">
+        <p>Un acompte est demandé pour démarrer le projet, le reste se règle à la livraison. Si besoin, des facilités de paiement peuvent être envisagées selon le projet.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">⏳ Durée moyenne d’un projet ? <span class="arrow">+</span></button>
+      <div class="faq-answer">
+        <p>En général, un projet prend entre 1 et 4 semaines selon sa taille et les validations nécessaires. Nous avançons à votre rythme, tout en restant efficaces.</p>
+      </div>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question">
-      🌐 Avec qui je travaille ? <span class="arrow">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>Je travaille avec tous types d’entreprises : indépendants, petites, moyennes et grandes structures.</p>
-    </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question">
-      💼 Comment se déroule ma prestation ? <span class="arrow">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>Un projet se déroule en plusieurs étapes : d’abord, nous discutons de vos besoins et définissons le cahier des charges. Ensuite, je crée une maquette que vous validez. Puis vient le développement final avec les ajustements nécessaires, pour terminer le projet selon les services demandés.</p>
-    </div>
+<!-- Carte verticale à droite -->
+<div class="profile-card">
+  <img src="noa.jpg" alt="Photo de Noa" class="profile-img">
+  <h2 class="profile-name">Noa</h2>
+  <p class="profile-role">Web Designer</p>
+  <button class="profile-btn" onclick="openModal()">Qui suis-je ?</button>
+  <div class="social-icons">
+    <a href="https://instagram.com/noa.ppm" target="_blank" class="icon insta">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://tiktok.com/@noa.ppm" target="_blank" class="icon tiktok">
+      <i class="fab fa-tiktok"></i>
+    </a>
   </div>
+</div>
 
-  <div class="faq-item">
-    <button class="faq-question">
-      💳 Comment se passe le règlement ? <span class="arrow">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>Un acompte est demandé pour démarrer le projet, le reste se règle à la livraison. Si besoin, des facilités de paiement peuvent être envisagées selon le projet.</p>
-    </div>
+<!-- Modal cachée par défaut -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img src="noa.jpg" alt="Photo de Noa" class="modal-img">
+    <h2>Noa</h2>
+    <p class="role">Web Designer</p>
+    <p class="desc">
+      Passionné par le design moderne et les sites web haut de gamme.  
+      J’aide les entreprises à avoir une image professionnelle et élégante en ligne.  
+    </p>
   </div>
+</div>
 
-  <div class="faq-item">
-    <button class="faq-question">
-      ⏳ Durée moyenne d’un projet ? <span class="arrow">+</span>
-    </button>
-    <div class="faq-answer">
-      <p>En général, un projet prend entre 1 et 4 semaines selon sa taille et les validations nécessaires. Nous avançons à votre rythme, tout en restant efficaces.</p>
-    </div>
-  </div>
+
+
+
 </section>
 
 
@@ -523,11 +544,11 @@ function setupCard(cardNumber) {
 
       // prix
       if(option.includes("transfere")) {
-        price.textContent = cardNumber === "1" ? "990€" : "1490€";
+        price.textContent = cardNumber === "1" ? "600€" : "500€";
         price.classList.add("autonome");
         price.classList.remove("tranquilite");
       } else {
-        price.textContent = cardNumber === "1" ? "690€" : "900€";
+        price.textContent = cardNumber === "1" ? "1000€" : "900€";
         price.classList.add("tranquilite");
         price.classList.remove("autonome");
       }
@@ -555,7 +576,23 @@ setupCard("1");
 setupCard("2");
 </script>
 
+<script>
+function openModal() {
+  document.getElementById("profileModal").style.display = "block";
+}
 
+function closeModal() {
+  document.getElementById("profileModal").style.display = "none";
+}
+
+// Fermer si on clique en dehors du contenu
+window.onclick = function(event) {
+  let modal = document.getElementById("profileModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 
 

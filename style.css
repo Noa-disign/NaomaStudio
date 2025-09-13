@@ -32,14 +32,19 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Alte Haas Grotesk', sans-serif;
     font-size: 1.6rem !important; /* tu peux changer cette valeur selon tes besoins */
+    transition: transform 0.3s ease;
 }
 
+/* Effet mini zoom au survol */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    transform: scale(1.05); /* léger zoom */
+}
 
 /* Petits textes en Inter - version compacte et blanche */
 body, p, .section-subtitle, .footer-brand-text, 
 .footer-link-list a, .testimonial-quote, .testimonial-author, 
 .price-label, .service-card p, .contact-details p, .nav-button, 
-.form-group label, .faq-answer {
+.form-group label, .faq-answer, .profile-card p, .profile-card li, .profile-btn {
     font-family: 'Inter', Arial, sans-serif;
     font-size: 0.85rem; /* un peu plus petit */
     line-height: 1.2; /* texte plus compact */
@@ -396,6 +401,17 @@ body, p, .section-subtitle, .footer-brand-text,
 .service-price.tranquilite {
   color: var(--noir-nuit);
 }
+
+.service-subtext {
+  display: block;
+  font-size: 1rem;       /* petit */
+  color: rgba(255, 255, 255, 0.6); /* blanc foncé, légèrement transparent */
+  margin-top: -0.3rem;      /* rapproche du titre */
+  margin-bottom: 0.6rem;    /* espace avant le prix */
+  font-weight: 300;
+  text-transform: none;
+}
+
 
 .service-includes {
   list-style: none;
@@ -1065,33 +1081,39 @@ body, p, .section-subtitle, .footer-brand-text,
   user-select: none;
 }
 
-/* Flèches */
+/* Flèches grosses, pro avec relief */
 .portfolio-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  background: rgba(0,0,0,0.2);
-  color: white;
-  font-size: 1.5rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 50%;
+  background: none;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.2s;
-}
-
-.portfolio-btn:hover {
-  background: rgba(0,0,0,0.4);
+  padding: 0.5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.4); /* relief */
+  transition: color 0.2s, transform 0.2s;
 }
 
 .portfolio-btn.left {
-  left: 0.5rem;
+  left: 1rem;
 }
 
 .portfolio-btn.right {
-  right: 0.5rem;
+  right: 1rem;
 }
+
+.portfolio-btn:hover {
+  color: #c6e8ff;
+  transform: translateY(-50%) scale(1.2); /* léger effet zoom au survol */
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.5); /* relief plus prononcé au survol */
+}
+
+
+
 #portfolio {
   margin-bottom: -1rem; /* tu réduis ici la marge externe */
 }
@@ -1321,7 +1343,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 .faq-section {
-  max-width: 360px; /* largeur encore plus compacte */
+  max-width: 360px !important; /* largeur encore plus compacte */
   margin: auto;
   padding: 35px 15px; /* marges réduites */
   font-family: 'Inter', Arial, sans-serif;
@@ -1412,6 +1434,7 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 
+
 /* Responsive mobile */
 @media (max-width: 600px) {
   .faq-title {
@@ -1425,6 +1448,201 @@ body, p, .section-subtitle, .footer-brand-text,
     font-size: 0.8rem;
   }
 }
+
+
+.profile-card {
+  background: #070707;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  border: 2px solid hsl(0, 0%, 18%); /* contour bleu */
+  margin: 50px auto;  /* centre horizontalement */
+  cursor: pointer;
+  /* supprime la transition sur le hover */
+}
+
+/* supprime l'effet survol */
+.profile-card:hover {
+  transform: none;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo carrée avec coins arrondis */
+.profile-img {
+  width: 150px;           
+  height: 150px;          
+  border-radius: 20px;
+  object-fit: contain;
+  margin-bottom: 18px;
+  background: #000;   
+  /* supprime le hover */
+  transition: none;
+}
+
+.profile-img:hover {
+  transform: none;
+}
+
+/* Texte */
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.profile-role {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 25px;
+}
+
+/* Bouton moderne */
+.profile-btn {
+  background: linear-gradient(135deg, #011927, #1269ff);
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.profile-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icônes réseaux */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.social-icons a {
+  font-size: 1.7rem;
+  color: #dddddd;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.15);
+}
+
+.icon.insta:hover {
+  color: #e1306c;
+}
+
+.icon.tiktok:hover {
+  color: #2181ff;
+}
+
+/* Modal sombre */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.7);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Contenu modal */
+.modal-content {
+  background: #111111;
+  margin: 30% auto;
+  padding: 30px 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 350px; /* réduit la largeur */
+  text-align: center;
+  animation: zoomIn 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  position: relative;
+  color: #ffffff; 
+}
+
+
+/* Image modal */
+.modal-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Texte modal */
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.modal-content .role {
+  font-size: 1.2rem;
+  color: #8fd6ff;
+  margin-bottom: 20px;
+}
+
+.modal-content .desc {
+  font-size: 0.92rem;
+  color: #dddddd;
+  line-height: 1.6;
+}
+
+/* Croix fermer */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #e74c3c;
+}
+
+/* Animations */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+/* Version Ordi ! */
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 600px) {
@@ -1673,14 +1891,38 @@ body, p, .section-subtitle, .footer-brand-text,
 
 /* Icônes */
 .service-icon img {
-  width: 69.6px !important;   /* +20% */
+  width: 79.6px !important;   /* +20% */
   margin-top: -0.3rem !important;
   margin-bottom: -0.3rem !important;
 }
+
+/* Réduction de l'image pour la carte 2 uniquement */
+.service-card:nth-child(2) .service-icon img {
+  width: 55px !important;   /* plus petit que les autres */
+  margin: 0 auto;
+  display: block;
+}
+
 .service-icon {
   font-size: 1.2rem;          /* +20% */
   margin-bottom: 0.36rem;
 }
+
+/* Augmente l’espace sous l’image de la carte 2 uniquement */
+.service-card:nth-child(2) .service-icon img {
+  margin-bottom: 0.6rem !important; /* ajuste la valeur comme tu veux */
+}
+
+.service-subtext {
+  display: block;
+  font-size: 0.65rem;       /* petit */
+  color: rgba(255, 255, 255, 0.6); /* blanc foncé, légèrement transparent */
+  margin-top: -0.3rem;      /* rapproche du titre */
+  margin-bottom: -0.2rem;    /* espace avant le prix */
+  font-weight: 300;
+  text-transform: none;
+}
+
 
 /* Contenu */
 .service-includes {
@@ -1704,11 +1946,14 @@ body, p, .section-subtitle, .footer-brand-text,
   text-align: center;
 }
 
-/* Boutons */
 .option-buttons {
-  padding: 2.4px;               /* +20% */
-  margin: 0.72rem auto;
+  padding: 2.4px;
+  margin-top: 0rem;  /* réduit l’espace au-dessus du bouton */
+  display: flex;         /* assure que le bouton reste visible */
+  justify-content: center;
+  gap: 0.5rem;           /* espace entre les boutons si plusieurs */
 }
+
 .option-btn {
   font-size: 0.624rem;           /* +20% */
   padding: 0.216rem 0.72rem;
@@ -1783,10 +2028,7 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 
-/* Supprimer les boutons sur toutes les cartes */
-.option-buttons {
-  display: none !important;
-}
+
 
 /* Réduire l’espace au-dessus des blocs "ON S’OCCUPE DE TOUT !" */
 .option-content {
@@ -1913,9 +2155,10 @@ body, p, .section-subtitle, .footer-brand-text,
   }
 
   .faq-section {
-    max-width: 700px;          /* largeur augmentée */
+    max-width: 700px !important;          /* largeur augmentée */
     padding: 40px 20px;
     font-size: 1.05rem;
+    margin-top: -0.30rem;
   }
 
   .faq-title {
@@ -1933,6 +2176,196 @@ body, p, .section-subtitle, .footer-brand-text,
     padding: 0 32px;           /* padding horizontal augmenté */
   }
 
+  /* Container FAQ + Carte */
+.faq-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+
+/* Carte profil sombre avec interaction */
+.profile-card {
+  background: #070707;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;     
+  margin-right: 80px;   
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px) scale(1.02);  /* léger relief */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4); /* ombre plus forte */
+}
+
+/* Photo carrée avec coins arrondis */
+.profile-img {
+  width: 150px;           
+  height: 150px;          
+  border-radius: 20px;
+  object-fit: contain;
+  margin-bottom: 18px;
+  background: #000;   
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* Texte */
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.profile-role {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 25px;
+}
+
+/* Bouton moderne */
+.profile-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.profile-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icônes réseaux */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.social-icons a {
+  font-size: 1.7rem;
+  color: #dddddd;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.15);
+}
+
+.icon.insta:hover {
+  color: #e1306c;
+}
+
+.icon.tiktok:hover {
+  color: #2181ff;
+}
+
+/* Modal sombre */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.7);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Contenu modal */
+.modal-content {
+  background: #111111;
+  margin: 10% auto;
+  padding: 30px 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  animation: zoomIn 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  position: relative;
+  color: #ffffff; /* texte blanc sur fond sombre */
+}
+
+/* Image modal */
+.modal-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Texte modal */
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.modal-content .role {
+  font-size: 1.2rem;
+  color: #9ec0ff;
+  margin-bottom: 20px;
+}
+
+.modal-content .desc {
+  font-size: 1rem;
+  color: #dddddd;
+  line-height: 1.6;
+}
+
+/* Croix fermer */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #e74c3c;
+}
+
+/* Animations */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+  
+
   .footer-content {
     max-width: 1400px;
     padding: 80px 40px 30px;
@@ -1944,7 +2377,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
   .footer-left h2 {
     font-size: 1.4rem;
-    margin-bottom: 150px;
+    margin-bottom: 40px;
   }
 
   .footer-left p {
@@ -1955,13 +2388,13 @@ body, p, .section-subtitle, .footer-brand-text,
 
   .bit2-image {
     width: 120px;
-    bottom: 220px;
+    bottom: 390px;
   }
 
   .cta-button {
     font-size: 1.15rem;
     padding: 16px 32px;
-    margin-top: 80px;
+    margin-top: 280px;
   }
 
   .footer-contacts {
