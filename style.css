@@ -1773,7 +1773,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
   .section-title {
     font-size: 2.2rem;
-    margin-bottom: 1.7rem;
+    margin-bottom: -1.5rem !important;
   }
 
   .section-subtitle {
@@ -1822,7 +1822,7 @@ body, p, .section-subtitle, .footer-brand-text,
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 0.6rem !important;      /* 20% plus rapproché */
+  gap: 3.6rem !important;      /* 20% plus rapproché */
   flex-wrap: nowrap;
   margin: 0 auto !important;
   padding: 0 !important;
@@ -1857,6 +1857,11 @@ body, p, .section-subtitle, .footer-brand-text,
 
 /* Carte du milieu : contour neutre */
 .service-card:nth-child(2) {
+  border: 1px solid var(--border); /* supprime toute couleur spéciale */
+}
+
+/* Carte du milieu : contour neutre */
+.service-card:nth-child(1) {
   border: 1px solid var(--border); /* supprime toute couleur spéciale */
 }
 
@@ -2049,6 +2054,19 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
+/* Ligne de séparation élégante */
+.separator {
+  width: 100%;                  /* prend toute la largeur du conteneur */
+  max-width: 600px;         /* largeur max pour rester élégante */
+  margin-top: -2rem !important;    
+  margin-bottom: 6rem !important;
+  height: 2px;                  /* épaisseur fine */
+  margin: 2rem auto;            /* espace vertical avant et après */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(121, 112, 255, 0.5), rgba(0,0,0,0));
+  border: none;
+  border-radius: 1px;           /* coins légèrement arrondis */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* léger relief */
+}
 
 
 
@@ -2060,18 +2078,17 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
-
-/* Portfolio pleine largeur - Version moderne */
+/* Portfolio centrée - Version moderne */
 .portfolio-carousel {
   --spacing: clamp(1rem, 4vw, 2rem);
   --item-size: min(32vw, 600px);
-  
+  margin-bottom: -10rem !important;
   padding: var(--spacing) 0;
   margin-block: -5rem 4.5rem;
-  inline-size: 100vw;
-  max-inline-size: 100vw;
-  margin-inline-start: 50%;
-  transform: translateX(-50%);
+  width: 90%;          /* largeur limitée */
+  max-width: 1200px;   /* largeur max centrée */
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   position: relative;
 }
@@ -2080,8 +2097,7 @@ body, p, .section-subtitle, .footer-brand-text,
   display: flex;
   gap: clamp(1.5rem, 3vw, 2.6rem);
   padding-inline: 0;
-  inline-size: 100vw;
-  max-inline-size: 100vw;
+  width: 100%;          /* prend toute la largeur du conteneur */
   scroll-snap-type: x mandatory;
   overflow-x: auto;
   scrollbar-width: none; /* Firefox */
@@ -2108,9 +2124,6 @@ body, p, .section-subtitle, .footer-brand-text,
 .portfolio-item:hover {
   transform: scale(1.02);
 }
-
-
-
 
 
 
@@ -2380,7 +2393,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
   .footer-left h2 {
     font-size: 1.4rem;
-    margin-bottom: 40px;
+    margin-bottom: 45px !important;
   }
 
   .footer-left p {
