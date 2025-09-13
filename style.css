@@ -2111,28 +2111,6 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
-.portfolio-btn:hover {
-  background: hsl(0 0% 100% / 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px hsl(0 0% 0% / 0.15);
-}
-
-#portfolio {
-  margin-block-end: -12.5rem;
-  container-type: inline-size;
-}
-
-/* Optimisations pour les petits écrans */
-@media (max-width: 768px) {
-  .portfolio-item {
-    flex: 0 0 min(85vw, 400px);
-  }
-  
-  .portfolio-track {
-    gap: 1rem;
-    padding-inline: 1rem;
-  }
-}
 
 
 
