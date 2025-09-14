@@ -1647,7 +1647,9 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 
-@media (min-width: 600px) {
+@media (min-width: 768px) and (max-width: 1920px) {
+  /* ton CSS ici */
+
 
   /* === TYPOGRAPHIE === */
   html, body {
@@ -1705,7 +1707,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
   /* Apparition du titre */
   .hero-title {
-    margin-top: 60px;
+    margin-top: 30px;
     font-size: 2.4rem !important;
     font-weight: 700;
     text-align: center;
@@ -1933,7 +1935,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 /* Contenu */
 .service-includes {
-  max-width: 192px;            /* +20% */
+  max-width: 592px !important;            /* +20% */
   margin-left: 0.24rem;
 }
 .service-includes li {
@@ -2067,8 +2069,6 @@ body, p, .section-subtitle, .footer-brand-text,
   border-radius: 1px;           /* coins légèrement arrondis */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* léger relief */
 }
-
-
 
 
 
@@ -2436,3 +2436,311 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 
+
+
+
+/* i pad vertical */
+
+
+
+
+
+
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+  html, body {
+    font-size: 1.1rem; /* un peu plus petit */
+    line-height: 1.5;
+  }
+
+  .container {
+    padding: 0 2rem;
+    max-width: 95%;
+  }
+
+  /* Navigation */
+  .navbar {
+    padding: 0 0rem;
+  }
+
+.nav-menu {
+    gap: 1.5rem !important;
+    font-size: 0.8rem !important;
+}
+
+    .nav-menu a {
+        font-size: 0.77rem !important;
+    }
+
+
+
+
+  .hero {
+    padding: 0 2rem;
+    margin-top: 5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem !important;
+    margin-top: 5rem;
+    margin-bottom: 3rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    max-width: 70%;
+    margin: 1rem auto 3rem auto;
+    margin-bottom: 3rem !important;
+  }
+
+  /* Sections */
+  .section {
+    padding: 6rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: -1rem !important;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    max-width: 95%;
+  }
+  
+
+.floating-image {
+  position: absolute;
+  bottom: 76%; /* juste au-dessus de la barre */
+  left: 42%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0; /* au-dessus de la barre */
+}
+
+
+
+
+
+/* footer */
+  .bit2-image {
+    width: 120px;
+    bottom: 340px;
+  }
+
+
+
+
+
+  /* Portfolio */
+  .portfolio-carousel {
+    width: 95%;
+    max-width: 95%;
+  }
+
+  .portfolio-item {
+    --item-size: min(40vw, 280px);
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+  }
+
+  /* Témoignages / FAQ */
+  .testimonial-card {
+    max-width: 90%;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .testimonial-quote {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.95rem;
+  }
+
+  .faq-section {
+    max-width: 90% !important;
+    padding: 30px 15px;
+    font-size: 1rem;
+  }
+
+  .faq-title {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem !important;
+    padding: 0 20px;
+  }
+
+  /* Portfolio et cartes profil */
+  .profile-card {
+    width: 220px;
+    padding: 30px 20px;
+    margin-top: 30px;
+    margin-right: 20px !important;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+  }
+
+  .profile-role {
+    font-size: 1rem;
+  }
+
+  .profile-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .social-icons a {
+    font-size: 1.4rem;
+    gap: 18px;
+  }
+
+}
+
+
+
+/* Styles spécifiques iPad horizontal */
+
+
+
+
+
+/* iPad horizontal */
+@media (min-width: 968px) and (max-width: 1024px) {
+
+  /* Typographie générale */
+  html, body {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  /* Container */
+  .container {
+    padding: 0 2rem;
+    max-width: 95%;
+  }
+
+  /* Navigation */
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    gap: 1rem !important;          /* réduit l’espace entre boutons pour iPad */
+    font-size: 0.75rem !important; /* texte un peu plus petit */
+  }
+
+  .nav-menu a {
+    font-size: 0.93rem !important;      /* taille du texte dans les liens */
+    padding: 0.35rem 0.6rem !important; /* réduit légèrement le padding */
+  }
+
+  /* Hero */
+  .hero {
+    padding: 0 2rem;
+    margin-top: 5rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem !important;
+    margin-top: 3rem;
+    margin-bottom: 3rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    max-width: 70%;
+    margin: 1rem auto 3rem auto;
+    margin-bottom: 3rem !important;
+  }
+
+  /* Sections */
+  .section {
+    padding: 6rem 0;
+  }
+
+  .floating-image {
+  position: absolute;
+  bottom: 76%; /* juste au-dessus de la barre */
+  left: 42%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0; /* au-dessus de la barre */
+}
+
+/* Contenu */
+.service-includes {
+  max-width: 592px !important;            /* +20% */
+  margin-left: 0.24rem;
+}
+.service-includes li {
+  font-size: 0.624rem;         /* +20% */
+  margin-bottom: 0.384rem;
+  padding-left: 1.7rem;
+}
+
+
+/* footer */
+  .bit2-image {
+    width: 120px;
+    bottom: 350px;
+  }
+
+
+
+  /* Portfolio et cartes profil */
+  .profile-card {
+    width: 220px;
+    padding: 30px 20px;
+    margin-top: 80px;
+    margin-right: 20px !important;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+  }
+
+  .profile-role {
+    font-size: 1rem;
+  }
+
+  .profile-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .social-icons a {
+    font-size: 1.4rem;
+    gap: 18px;
+  }
+
+
+}
