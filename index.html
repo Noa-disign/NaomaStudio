@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <head>
- <meta name="theme-color" content="#000000">
- <title>Naoma studio - Créateur de sites web pro</title>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="stylesheet" href="style.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- SEO de base -->
+    <title>Naoma Studio - Créateur de sites web professionnels</title>
+    <meta name="description" content="Naoma Studio crée des sites web professionnels, modernes et haut de gamme pour votre entreprise.">
+    <meta name="keywords" content="site web, web design, création site internet, Naoma Studio, freelance web designer">
+    <meta name="author" content="Noa - Naoma Studio">
+
+    <!-- Couleur du thème navigateur -->
+    <meta name="theme-color" content="#000000">
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Open Graph / réseaux sociaux -->
+    <meta property="og:title" content="Naoma Studio - Créateur de sites web professionnels">
+    <meta property="og:description" content="Naoma Studio crée des sites web modernes et haut de gamme pour votre entreprise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tonsite.github.io/Mon-site/">
+    <meta property="og:image" content="https://tonsite.github.io/Mon-site/assets/preview.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Naoma Studio - Créateur de sites web professionnels">
+    <meta name="twitter:description" content="Naoma Studio crée des sites web modernes et haut de gamme pour votre entreprise.">
+    <meta name="twitter:image" content="https://tonsite.github.io/Mon-site/assets/preview.jpg">
+</head>
 
 </head>
 <body>
@@ -477,25 +503,27 @@ highlight.addEventListener('click', () => {
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const logo = document.querySelector(".logo-main");
-    const container = document.querySelector(".logo-container");
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".logo-main");
+  const container = document.querySelector(".logo-container");
 
-    container.addEventListener("click", () => {
-      logo.classList.add("flipped");
+  container.addEventListener("pointerdown", () => {
+    // Ajouter la classe pour l'animation
+    logo.classList.add("flipped");
 
-      setTimeout(() => {
-        if (logo.getAttribute("src") === "LOGO.svg") {
-          logo.setAttribute("src", "LOGO TEXTE.svg");
-        } else {
-          logo.setAttribute("src", "LOGO.svg");
-        }
-
-        logo.classList.remove("flipped");
-      }, 300);
-    });
+    // Après 300ms, changer le logo et retirer la classe
+    setTimeout(() => {
+      const currentSrc = logo.getAttribute("src");
+      logo.setAttribute(
+        "src",
+        currentSrc === "LOGO.svg" ? "LOGO TEXTE.svg" : "LOGO.svg"
+      );
+      logo.classList.remove("flipped");
+    }, 300);
   });
+});
 </script>
+
 
 
 <script>

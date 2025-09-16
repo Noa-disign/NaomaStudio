@@ -425,7 +425,7 @@ body, p, .section-subtitle, .footer-brand-text,
 
 .service-includes li {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.8rem;
   margin-bottom: 1rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -438,12 +438,19 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 .service-includes li::before {
-  content: "✔";
-  margin-right: 0.5rem;
-  font-weight: bold;
-  color: #ffffff; /* couleur par défaut */
+  content: "✔";              /* check mark */
+  margin-right: 0.5rem;      /* espace avec le texte */
+  font-weight: bold;          /* gras */
+  color: #ffffff;            /* couleur du check */
+  
+  /* Transition pour l’effet de couleur */
   transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease; /* Safari / iOS */
+  
+  display: inline-block;      /* assure un rendu correct */
+  vertical-align: middle;     /* aligne bien le check avec le texte */
 }
+
 
 /* Quand le li est cliqué */
 .service-includes li.checked {
@@ -1451,7 +1458,7 @@ body, p, .section-subtitle, .footer-brand-text,
     font-size: 1.5rem;
   }
   .faq-question {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     padding: 14px 16px;
   }
   .faq-answer {
