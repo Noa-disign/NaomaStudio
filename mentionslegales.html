@@ -3,89 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions Légales</title>
-    <link rel="stylesheet" href="styleM.css">
+    <title>Mentions Légales - NaomaStudio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <body>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
 
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
 
-    <div class="container">
-        <header class="header">
-            <h1>Mentions Légales</h1>
-            <p>Informations légales et réglementaires</p>
-        </header>
+        .subtitle {
+            text-align: center;
+            color: #888888;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
 
-        <main class="content">
-            <section class="section contact-info">
-                <h2>Éditeur du Site</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <span class="info-label">Raison sociale</span>
-                        <span class="info-value">NaomaStudio</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Forme juridique</span>
-                        <span class="info-value">Auto-entrepreneur</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Capital social</span>
-                        <span class="info-value">0</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">SIRET</span>
-                        <span class="info-value">928 570 977 00019</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Adresse</span>
-                        <span class="info-value">Rue George Sand<br>Chantepie, Bretagne</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Téléphone</span>
-                        <span class="info-value">07 83 87 43 05</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Email</span>
-                        <span class="info-value highlight">naoma.studio@gmail.com</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Directeur publication</span>
-                        <span class="info-value">Noa Morguen</span>
-                    </div>
-                </div>
-            </section>
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333333;
+        }
 
-            <section class="section">
-                <h2>Hébergement</h2>
-                <p>Ce site est hébergé par <span class="highlight">[Nom de l'hébergeur]</span></p>
-                <p>Adresse : [Adresse de l'hébergeur]</p>
-                <p>Téléphone : [Numéro de téléphone de l'hébergeur]</p>
-            </section>
+        p {
+            margin-bottom: 1rem;
+            color: #cccccc;
+        }
 
-            <section class="section">
-                <h2>Propriété Intellectuelle</h2>
-                <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
-                <p>La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication.</p>
-            </section>
+        .highlight {
+            color: #78b9ff;
+            font-weight: 500;
+        }
 
-            <section class="section">
-                <h2>Protection des Données</h2>
-                <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
-                <p>Pour exercer ces droits, vous pouvez nous contacter à l'adresse : <span class="highlight">naoma.studio@gmail.com</span></p>
-                <p>Aucune information personnelle n'est collectée à votre insu. Aucune information personnelle n'est cédée à des tiers.</p>
-            </section>
+        .info-section {
+            margin: 1.5rem 0;
+        }
 
+        .info-row {
+            display: flex;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem 0;
+        }
 
-            <section class="section">
-                <h2>Responsabilité</h2>
-                <p>Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, mais peut toutefois contenir des inexactitudes, des omissions ou des lacunes.</p>
-                <p>Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email en décrivant le problème de la manière la plus précise possible.</p>
-                <p>Tout contenu téléchargé se fait aux risques et périls de l'utilisateur et sous sa seule responsabilité.</p>
-            </section>
-        </main>
+        .info-label {
+            min-width: 180px;
+            color: #888888;
+            font-weight: 500;
+        }
 
-        <footer class="footer">
-            <p>Dernière mise à jour : août 2025</p>
-        </footer>
+        .info-value {
+            color: #ffffff;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333333;
+            color: #666666;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .info-row {
+                flex-direction: column;
+            }
+            
+            .info-label {
+                min-width: auto;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Mentions Légales</h1>
+    <p class="subtitle">Informations légales et réglementaires</p>
+
+    <h2>Éditeur du Site</h2>
+    <div class="info-section">
+        <div class="info-row">
+            <span class="info-label">Raison sociale :</span>
+            <span class="info-value"><span class="highlight">NaomaStudio</span></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Forme juridique :</span>
+            <span class="info-value">Auto-entrepreneur</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Capital social :</span>
+            <span class="info-value">0 €</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">SIRET :</span>
+            <span class="info-value"><span class="highlight">928 570 977 00019</span></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Adresse :</span>
+            <span class="info-value">Rue George Sand<br>Chantepie, Bretagne</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Téléphone :</span>
+            <span class="info-value"><span class="highlight">07 83 87 43 05</span></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Email :</span>
+            <span class="info-value"><span class="highlight">naoma.studio@gmail.com</span></span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Directeur publication :</span>
+            <span class="info-value"><span class="highlight">Noa Morguen</span></span>
+        </div>
+    </div>
+
+   <h2>Hébergement</h2>
+<p>Ce site est hébergé par <span class="highlight">GitHub, Inc.</span></p>
+<p>Adresse : 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis</p>
+
+    <h2>Propriété Intellectuelle</h2>
+    <p>L'ensemble de ce site relève de la <span class="highlight">législation française et internationale</span> sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+    <p>La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est <span class="highlight">formellement interdite</span> sauf autorisation expresse du directeur de la publication.</p>
+
+    <h2>Protection des Données</h2>
+    <p>Conformément au <span class="highlight">Règlement Général sur la Protection des Données (RGPD)</span> et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
+    <p>Pour exercer ces droits, vous pouvez nous contacter à l'adresse : <span class="highlight">naoma.studio@gmail.com</span></p>
+    <p><span class="highlight">Aucune information personnelle</span> n'est collectée à votre insu. <span class="highlight">Aucune information personnelle</span> n'est cédée à des tiers.</p>
+
+    <h2>Responsabilité</h2>
+    <p>Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, mais peut toutefois contenir des <span class="highlight">inexactitudes, des omissions ou des lacunes</span>.</p>
+    <p>Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email en décrivant le problème de la manière la plus précise possible.</p>
+    <p>Tout contenu téléchargé se fait aux <span class="highlight">risques et périls de l'utilisateur</span> et sous sa seule responsabilité.</p>
+
+    <div class="footer">
+        <p>Dernière mise à jour : septembre 2025</p>
     </div>
 </body>
 </html>

@@ -66,16 +66,23 @@ body, p, .section-subtitle, .footer-brand-text,
   align-items: center;
 }
 
-/* Container */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem ;
+  padding: 0 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* Flou transparent compatible iOS */
+  background: rgba(0, 0, 0, 0.4);        /* fond semi-transparent */
+  -webkit-backdrop-filter: blur(15px);   /* Safari/iOS */
+  backdrop-filter: blur(15px);           /* Chrome, Firefox, Edge */
+  border-radius: 16px;                   /* optionnel, pour arrondir */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 
 /* Logo image */
 .logo-main {
@@ -1355,6 +1362,7 @@ body, p, .section-subtitle, .footer-brand-text,
 .faq-section {
   max-width: 360px !important; /* largeur encore plus compacte */
   margin: auto;
+  margin-top: -4rem;
   padding: 35px 15px; /* marges réduites */
   font-family: 'Inter', Arial, sans-serif;
 }
