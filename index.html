@@ -5,7 +5,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <head>
  <meta name="theme-color" content="#000000">
- <title>Noa.webstudio - Créateur de sites web premium</title>
+ <title>Naoma studio - Créateur de sites web pro</title>
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link rel="stylesheet" href="style.css">
@@ -23,16 +23,21 @@
     </a>
 
     <ul class="nav-menu">
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#testimonials">Avis clients</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#FAQ">FAQ</a></li>
+      <li><a href="#footer-placeholder">Je me lance</a></li>
     </ul>
 
-    <!-- Bouton premium -->
-<button class="nav-button">
-  <span>Contact</span>
-</button>
+<a href="https://wa.me/33783874305?text=Salut%20Noa%20je%20tes%20services%20m%27int%C3%A9ressent" target="_blank">
+  <button class="nav-button">
+    <span>Contact</span>
+  </button>
+</a>
+
+
+
+
 
     <div class="mobile-menu">
       <span></span>
@@ -241,7 +246,7 @@
 <section class="faq-wrapper" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin: 4rem 0;">
 
   <!-- FAQ à gauche -->
-  <div class="faq-section" style="flex: 1 1 500px; max-width: 700px;">
+  <div class="faq-section" id="FAQ" style="flex: 1 1 500px; max-width: 700px;">
     <h2 class="faq-title">FAQ 💬</h2>
 
     <div class="faq-item">
@@ -282,20 +287,26 @@
 
 
 <!-- Carte verticale à droite -->
+
+
 <div class="profile-card">
   <img src="noa.jpg" alt="Photo de Noa" class="profile-img">
   <h2 class="profile-name">Noa</h2>
   <p class="profile-role">Web Designer</p>
   <button class="profile-btn" onclick="openModal()">Qui suis-je ?</button>
   <div class="social-icons">
+    <!-- Modal cachée par défaut 
     <a href="https://instagram.com/noa.ppm" target="_blank" class="icon insta">
       <i class="fab fa-instagram"></i>
     </a>
-    <a href="https://tiktok.com/@noa.ppm" target="_blank" class="icon tiktok">
-      <i class="fab fa-tiktok"></i>
+    <a href="https://www.linkedin.com/in/noa" target="_blank" class="icon linkedin">
+      <i class="fab fa-linkedin"></i>
     </a>
+    -->
   </div>
 </div>
+
+
 
 <!-- Modal cachée par défaut -->
 <div id="profileModal" class="modal">
@@ -518,60 +529,56 @@ includesItems.forEach(item => {
 </script>
 
 <script>
-// Fonction pour initialiser une carte
-function setupCard(cardNumber) {
-  const card = document.querySelector(`#service-icon-${cardNumber}`).closest(".service-card");
-  const buttons = card.querySelectorAll(".option-btn");
-  const slider = card.querySelector(".option-slider");
-  const texts = card.querySelectorAll(".option-text");
-  const price = card.querySelector(".service-price");
-  const icon = card.querySelector(`#service-icon-${cardNumber}`);
+document.addEventListener("DOMContentLoaded", () => {
 
-  // Gestion du clic sur les boutons d'option
-  buttons.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-      const option = btn.dataset.option;
+  // Fonction pour initialiser une carte
+  function setupCard(cardNumber) {
+    const card = document.querySelector(`#service-icon-${cardNumber}`).closest(".service-card");
+    const buttons = card.querySelectorAll(".option-btn");
+    const slider = card.querySelector(".option-slider");
+    const texts = card.querySelectorAll(".option-text");
+    const price = card.querySelector(".service-price");
 
-      // bouton actif
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+    buttons.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        const option = btn.dataset.option;
 
-      // slider position et couleur
-      slider.style.left = index * 50 + "%";
-      slider.classList.toggle("tranquilite", option.includes("gere"));
+        // Active le bouton
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
 
-      // texte affiché
-      texts.forEach(t => (t.style.display = "none"));
-      document.getElementById(option).style.display = "block";
+        // Déplace le slider et change sa couleur
+        slider.style.left = index * 50 + "%";
+        slider.classList.toggle("tranquilite", option.includes("gere"));
+        slider.classList.toggle("autonome", option.includes("transfere"));
 
-      // prix
-      if(option.includes("transfere")) {
-        price.textContent = cardNumber === "1" ? "600€" : "500€";
-        price.classList.add("autonome");
-        price.classList.remove("tranquilite");
-      } else {
-        price.textContent = cardNumber === "1" ? "1000€" : "900€";
-        price.classList.add("tranquilite");
-        price.classList.remove("autonome");
-      }
+        // Affiche le texte correspondant
+        texts.forEach(t => t.style.display = "none");
+        document.getElementById(option).style.display = "block";
 
-      // card contour
-      card.classList.toggle("autonome", option.includes("transfere"));
-      card.classList.toggle("tranquilite", option.includes("gere"));
+        // Change le prix selon la carte et l'option
+        if(option.includes("transfere")) {
+          price.textContent = cardNumber === "1" ? "600€" : "1000€";
+          price.classList.add("autonome");
+          price.classList.remove("tranquilite");
+        } else {
+          price.textContent = cardNumber === "1" ? "500€" : "900€";
+          price.classList.add("tranquilite");
+          price.classList.remove("autonome");
+        }
+
+        // Change le style de la carte
+        card.classList.toggle("autonome", option.includes("transfere"));
+        card.classList.toggle("tranquilite", option.includes("gere"));
+      });
     });
-  });
+  }
 
-  // Gestion du clic sur les éléments li pour changer la couleur
-  const includesItems = card.querySelectorAll('.service-includes li');
-  includesItems.forEach(item => {
-    item.addEventListener('click', () => {
-      // On remet tous les autres li en blanc
-      includesItems.forEach(i => i.classList.remove('checked'));
-      // On met celui cliqué en bleu
-      item.classList.add('checked');
-    });
-  });
-}
+  // Initialise les deux cartes
+  setupCard("1");
+  setupCard("2");
+
+});
 
 // Initialisation pour les deux cartes
 setupCard("1");

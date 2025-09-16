@@ -1279,6 +1279,11 @@ body, p, .section-subtitle, .footer-brand-text,
         text-align: center;
     }
 
+  
+#footer-placeholder {
+  scroll-margin-top: 52px ; /* ajuste la valeur selon la hauteur de ton header */
+}
+
     .copyright {
         color: #64748b;
         font-size: 0.9rem;
@@ -1432,6 +1437,10 @@ body, p, .section-subtitle, .footer-brand-text,
 .faq-item.active .arrow {
   transform: rotate(45deg);
   color: var(--bg-primary); /* couleur quand ouvert */
+}
+
+#FAQ {
+  scroll-margin-top: 100px; /* ajuste la valeur selon la hauteur de ton header */
 }
 
 
