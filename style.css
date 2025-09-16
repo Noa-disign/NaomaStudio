@@ -1452,7 +1452,7 @@ body, p, .section-subtitle, .footer-brand-text,
 /* Responsive mobile */
 @media (max-width: 600px) {
   .faq-title {
-    font-size: 1.5rem;
+    font-size: 1.54rem;
   }
   .faq-question {
     font-size: 0.82rem;
