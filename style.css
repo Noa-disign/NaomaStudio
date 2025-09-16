@@ -35,10 +35,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.3s ease;
 }
 
-/* Effet mini zoom au survol */
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-    transform: scale(1.05); /* léger zoom */
-}
+
 
 /* Petits textes en Inter - version compacte et blanche */
 body, p, .section-subtitle, .footer-brand-text, 
