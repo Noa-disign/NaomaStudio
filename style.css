@@ -2756,3 +2756,81 @@ body, p, .section-subtitle, .footer-brand-text,
 
 
 }
+
+
+
+
+
+/* === RESPONSIVE iPhone SE et moins === */
+@media (max-width: 375px) {
+
+  /* Texte global */
+  html, body {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* Navigation */
+  .nav-menu {
+    gap: 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 0 1rem;
+    margin-top: 5rem;
+  }
+
+  .hero-title {
+    font-size: 1.6rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Logo flottant réduit */
+  .floating-image {
+    position: absolute;
+    bottom: 76%;
+    left: 42%;
+    transform: translateX(-50%);
+    width: 100px;  /* réduit encore plus pour iPhone SE */
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bit2-image {
+    width: 80px;    /* réduit */
+    bottom: 305px;  /* ajusté */
+  }
+
+
+  .portfolio-carousel {
+    --spacing: 0.8rem;              /* moins d’espace */
+    --item-size: 75vw;              /* items plus petits (75% de l’écran) */
+    margin-bottom: -4rem !important;
+    margin-top: -61px !important;
+    margin-block: 0 3rem;           /* moins de marges */
+    width: 100%;                    /* prend toute la largeur */
+    max-width: 100%;                /* pas de limite */
+    padding: var(--spacing) 0;
+  }
+
+  .portfolio-track {
+    gap: 1rem;                      /* réduit l’espacement */
+    padding-inline: 0.5rem;
+  }
+
+  .portfolio-item {
+    flex: 0 0 var(--item-size);
+    block-size: var(--item-size);
+    font-size: 0.85rem;              /* texte plus petit */
+    border-radius: 0.5rem;           /* coins adoucis mais compacts */
+  }
+
+}
+
