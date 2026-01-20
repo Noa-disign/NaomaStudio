@@ -632,63 +632,82 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <!-- end consolidated scripts -->
 
+<!-- REPLACED: unified gallery touch/click handling -->
 <script>
-document.querySelectorAll('.portfolio-item').forEach(item => {
+document.addEventListener('DOMContentLoaded', () => {
+  // marque les appareils tactiles
+  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+  if (isTouch) document.body.classList.add('touch-device');
 
-    let dragged = false;
-
-    // détecter drag
-    item.addEventListener('mousedown', () => dragged = false);
-    item.addEventListener('mousemove', () => dragged = true);
-
-    // support tactile : on ferme les autres overlays et on active no-hover brièvement
-    item.addEventListener('touchstart', (e) => {
-        // ferme les overlays actifs sur les autres items pour éviter "survol collé"
-        document.querySelectorAll('.portfolio-item.active').forEach(i => {
-          if (i !== item) i.classList.remove('active');
-        });
-        // ajoute la classe qui désactive :hover
-        document.body.classList.add('no-hover');
-        clearTimeout(window.__removeNoHoverTimeout);
-        window.__removeNoHoverTimeout = setTimeout(() => {
-          document.body.classList.remove('no-hover');
-        }, 300);
-    }, { passive: true });
-
-    item.addEventListener('click', (e) => {
-        // si c'était un drag → ignorer
-        if (dragged) return;
-
-        e.preventDefault();
-        e.stopPropagation();
-
-        // toggle overlay
-        item.classList.toggle('active');
-    });
-});
-</script>
-
-<script>
-/* Sur mobile : quand on touche la galerie, désactive brièvement les styles :hover et ferme overlays collés */
-document.addEventListener('touchstart', function(e){
   const gallery = document.getElementById('galleryContainer');
   if (!gallery) return;
-  if (gallery.contains(e.target)) {
-    document.body.classList.add('no-hover');
 
-    // fermer tout overlay actif pour éviter état "collé"
-    document.querySelectorAll('.portfolio-item.active').forEach(i => i.classList.remove('active'));
+  const items = Array.from(gallery.querySelectorAll('.portfolio-item'));
 
-    // retire la classe après court délai (ajuste 250-400ms si nécessaire)
-    clearTimeout(window.__removeNoHoverTimeout);
-    window.__removeNoHoverTimeout = setTimeout(() => {
-      document.body.classList.remove('no-hover');
-    }, 300);
+  // Helper : close all except one
+  function closeOthers(except) {
+    items.forEach(i => { if (i !== except) i.classList.remove('active'); });
   }
-}, { passive: true });
-</script>
 
-</html>
-<!-- end consolidated scripts -->
+  // Use pointer events for robust detection (touch vs drag)
+  items.forEach(item => {
+    let startX = 0, startY = 0, moved = false;
+
+    item.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'touch') return; // only change behavior for touch
+      moved = false;
+      startX = e.clientX;
+      startY = e.clientY;
+
+      // briefly disable :hover styles to avoid "collé"
+      document.body.classList.add('no-hover');
+
+      // ensure other overlays are closed when starting a new touch
+      closeOthers(item);
+
+      // try to capture pointer to get pointerup reliably
+      try { item.setPointerCapture && item.setPointerCapture(e.pointerId); } catch (err) {}
+    }, { passive: true });
+
+    item.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'touch') return;
+      if (Math.hypot(e.clientX - startX, e.clientY - startY) > 10) moved = true;
+    }, { passive: true });
+
+    item.addEventListener('pointerup', (e) => {
+      if (e.pointerType !== 'touch') return;
+      try { item.releasePointerCapture && item.releasePointerCapture(e.pointerId); } catch (err) {}
+      // if it was a tap (pas de drag) => toggle overlay
+      if (!moved) {
+        e.preventDefault();
+        item.classList.toggle('active');
+      }
+      // retire la classe no-hover après court délai
+      clearTimeout(window.__removeNoHoverTimeout);
+      window.__removeNoHoverTimeout = setTimeout(() => {
+        document.body.classList.remove('no-hover');
+      }, 300);
+    }, { passive: false });
+
+    // For non-touch / mouse: keep existing click behavior (allows click toggle on desktop too)
+    item.addEventListener('click', (e) => {
+      // if touch device, the synthetic click may follow pointerup — ignore it to avoid double toggle
+      if (isTouch) return;
+      // normal desktop click toggles overlay as expected
+      e.preventDefault();
+      item.classList.toggle('active');
+    });
+  });
+
+  // Additionally: close active overlays when user taps outside the gallery
+  document.addEventListener('pointerdown', (e) => {
+    if (!isTouch) return;
+    if (!gallery.contains(e.target)) {
+      items.forEach(i => i.classList.remove('active'));
+    }
+  }, { passive: true });
+
+});
+</script>
 
 </html>
