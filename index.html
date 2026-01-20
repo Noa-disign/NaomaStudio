@@ -30,6 +30,21 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- added: disable hover effects when touch interaction detected -->
+<style>
+  /* Empêche les règles :hover de s'appliquer quand on a ajouté la classe no-hover (sur mobile) */
+  body.no-hover .portfolio-item:hover,
+  body.no-hover .portfolio-item:hover .item-overlay {
+    pointer-events: none !important;
+  }
+  /* Force la fermeture visuelle des overlays si certains styles s'appuyaient uniquement sur :hover */
+  body.no-hover .portfolio-item .item-overlay {
+    opacity: 0 !important;
+    transform: translateY(6px) !important;
+    visibility: hidden !important;
+  }
+</style>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -619,25 +634,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
 document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('click', () => {
+
+    let dragged = false;
+
+    // détecter drag
+    item.addEventListener('mousedown', () => dragged = false);
+    item.addEventListener('mousemove', () => dragged = true);
+
+    // support tactile : on ferme les autres overlays et on active no-hover brièvement
+    item.addEventListener('touchstart', (e) => {
+        // ferme les overlays actifs sur les autres items pour éviter "survol collé"
+        document.querySelectorAll('.portfolio-item.active').forEach(i => {
+          if (i !== item) i.classList.remove('active');
+        });
+        // ajoute la classe qui désactive :hover
+        document.body.classList.add('no-hover');
+        clearTimeout(window.__removeNoHoverTimeout);
+        window.__removeNoHoverTimeout = setTimeout(() => {
+          document.body.classList.remove('no-hover');
+        }, 300);
+    }, { passive: true });
+
+    item.addEventListener('click', (e) => {
+        // si c'était un drag → ignorer
+        if (dragged) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        // toggle overlay
         item.classList.toggle('active');
     });
 });
 </script>
 
 <script>
-document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('click', () => {
-        document.querySelectorAll('.portfolio-item.active')
-            .forEach(active => {
-                if (active !== item) active.classList.remove('active');
-            });
+/* Sur mobile : quand on touche la galerie, désactive brièvement les styles :hover et ferme overlays collés */
+document.addEventListener('touchstart', function(e){
+  const gallery = document.getElementById('galleryContainer');
+  if (!gallery) return;
+  if (gallery.contains(e.target)) {
+    document.body.classList.add('no-hover');
 
-        item.classList.toggle('active');
-    });
-});
+    // fermer tout overlay actif pour éviter état "collé"
+    document.querySelectorAll('.portfolio-item.active').forEach(i => i.classList.remove('active'));
+
+    // retire la classe après court délai (ajuste 250-400ms si nécessaire)
+    clearTimeout(window.__removeNoHoverTimeout);
+    window.__removeNoHoverTimeout = setTimeout(() => {
+      document.body.classList.remove('no-hover');
+    }, 300);
+  }
+}, { passive: true });
 </script>
-
 
 </html>
 <!-- end consolidated scripts -->

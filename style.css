@@ -1662,14 +1662,20 @@ body, p, .section-subtitle, .footer-brand-text,
   position: relative;
 }
 
-
-/* État cliqué */
-.portfolio-item.active .item-image {
+/* Overlay invisible par défaut */
+.portfolio-item .item-overlay {
     opacity: 0;
-    transform: scale(0.95);
-    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* Hover pour desktop */
+@media (hover: hover) and (pointer: fine) {
+    .portfolio-item:hover .item-overlay {
+        opacity: 1;
+    }
+}
+
+/* Toggle actif (via JS) pour PC et mobile */
 .portfolio-item.active .item-overlay {
     opacity: 1;
 }
