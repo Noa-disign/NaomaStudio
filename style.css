@@ -1645,6 +1645,17 @@ body, p, .section-subtitle, .footer-brand-text,
     margin-left: 10px; /* ajuste la valeur selon l’effet désiré */
 }
 
+/* Désactiver le hover sur mobile */
+@media (hover: none) and (pointer: coarse) {
+  .portfolio-item:hover {
+    transform: none !important;
+  }
+
+  .portfolio-item:hover .item-overlay {
+    opacity: 0 !important;
+  }
+}
+
 
 
 /* Portfolio centrée - Version moderne */
@@ -1662,23 +1673,7 @@ body, p, .section-subtitle, .footer-brand-text,
   position: relative;
 }
 
-/* Overlay invisible par défaut */
-.portfolio-item .item-overlay {
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
 
-/* Hover pour desktop */
-@media (hover: hover) and (pointer: fine) {
-    .portfolio-item:hover .item-overlay {
-        opacity: 1;
-    }
-}
-
-/* Toggle actif (via JS) pour PC et mobile */
-.portfolio-item.active .item-overlay {
-    opacity: 1;
-}
 
 
 
