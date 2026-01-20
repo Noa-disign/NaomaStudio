@@ -618,18 +618,35 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- end consolidated scripts -->
 
 <script>
-document.querySelectorAll('.portfolio-item').forEach(item => {
-    let dragged = false;
+// Détecte tablette / mobile
+const isTabletOrSmaller = window.matchMedia("(hover: none), (max-width: 1024px)").matches;
 
-    // gérer drag dans le carousel
-    item.addEventListener('mousedown', () => dragged = false);
-    item.addEventListener('mousemove', () => dragged = true);
+if (isTabletOrSmaller) {
+    const items = document.querySelectorAll('.portfolio-item');
 
-    item.addEventListener('click', (e) => {
-        if (dragged) return; // ignorer le drag
-        item.classList.toggle('active'); // toggle overlay
+    items.forEach(item => {
+        let dragged = false;
+
+        // Ignore drag
+        item.addEventListener('mousedown', () => dragged = false);
+        item.addEventListener('mousemove', () => dragged = true);
+
+        item.addEventListener('click', () => {
+            if (dragged) return; // ne pas toggle si c'était un drag
+
+            if (item.classList.contains('active')) {
+                // Si l'image est déjà active -> on la désactive
+                item.classList.remove('active');
+            } else {
+                // Désactive toutes les autres images
+                items.forEach(i => i.classList.remove('active'));
+                // Active seulement celle-ci
+                item.classList.add('active');
+            }
+        });
     });
-});
+}
+
 </script>
 
 </html>

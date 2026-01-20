@@ -1645,15 +1645,40 @@ body, p, .section-subtitle, .footer-brand-text,
     margin-left: 10px; /* ajuste la valeur selon l’effet désiré */
 }
 
-/* Désactiver le hover sur mobile */
-@media (hover: none) and (pointer: coarse) {
-  .portfolio-item:hover {
-    transform: none !important;
-  }
+/* Désactive tous les hover sur iPad et plus petit */
+@media (hover: none), (max-width: 1024px) {
+    .portfolio-item:hover {
+        transform: none !important;
+    }
 
-  .portfolio-item:hover .item-overlay {
-    opacity: 0 !important;
-  }
+    .portfolio-item:hover .item-image {
+        border-color: initial !important;
+        box-shadow: none !important;
+    }
+
+    .portfolio-item:hover::before {
+        opacity: 0 !important;
+        animation: none !important;
+    }
+
+    .portfolio-item:hover .item-overlay {
+        opacity: 0 !important;
+    }
+
+    .portfolio-item:hover .item-title,
+    .portfolio-item:hover .item-description {
+        transform: none !important;
+    }
+}
+
+/* Overlay toggle via JS */
+.portfolio-item .item-overlay {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item.active .item-overlay {
+    opacity: 1;
 }
 
 
