@@ -618,36 +618,31 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- end consolidated scripts -->
 
 <script>
-// Détecte tablette / mobile
-const isTabletOrSmaller = window.matchMedia("(hover: none), (max-width: 1024px)").matches;
+  const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
-if (isTabletOrSmaller) {
-    const items = document.querySelectorAll('.portfolio-item');
+if (isMobile) {
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    let dragged = false;
 
-    items.forEach(item => {
-        let dragged = false;
+    item.addEventListener('mousedown', () => dragged = false);
+    item.addEventListener('mousemove', () => dragged = true);
 
-        // Ignore drag
-        item.addEventListener('mousedown', () => dragged = false);
-        item.addEventListener('mousemove', () => dragged = true);
+    item.addEventListener('click', (e) => {
+      if (dragged) return; // ignorer drag
 
-        item.addEventListener('click', () => {
-            if (dragged) return; // ne pas toggle si c'était un drag
+      // ajouter la classe active
+      item.classList.add('active');
 
-            if (item.classList.contains('active')) {
-                // Si l'image est déjà active -> on la désactive
-                item.classList.remove('active');
-            } else {
-                // Désactive toutes les autres images
-                items.forEach(i => i.classList.remove('active'));
-                // Active seulement celle-ci
-                item.classList.add('active');
-            }
-        });
+      // retirer après 2 secondes
+      setTimeout(() => {
+        item.classList.remove('active');
+      }, 2000);
     });
+  });
 }
 
 </script>
+
 
 </html>
 <!-- end consolidated scripts -->
