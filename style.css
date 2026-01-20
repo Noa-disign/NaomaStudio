@@ -1663,6 +1663,16 @@ body, p, .section-subtitle, .footer-brand-text,
 }
 
 
+/* État cliqué */
+.portfolio-item.active .item-image {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.portfolio-item.active .item-overlay {
+    opacity: 1;
+}
 
 
 
