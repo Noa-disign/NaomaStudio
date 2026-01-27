@@ -175,9 +175,9 @@
 
                 <!-- Item 3 -->
                 <div class="portfolio-item">
-                            <img src="portfo2.png" alt="Projet 3" class="item-image">
+                            <img src="portfo5.jpeg" alt="Projet 3" class="item-image">
                     <div class="item-overlay">
-                        <div class="item-title">Restaurant</div>
+                        <div class="item-title">Chocolatier</div>
                         <div class="item-description">Exemple</div>
                     </div>
                 </div>
@@ -185,15 +185,47 @@
 
                 <!-- Item 4 -->
                 <div class="portfolio-item">
-                            <img src="portfo3.png" alt="Projet 4" class="item-image">
+                            <img src="portfo6.jpeg" alt="Projet 4" class="item-image">
                     <div class="item-overlay">
-                        <div class="item-title">Designer d’intérieur</div>
+                        <div class="item-title">Carnet</div>
                         <div class="item-description">Exemple</div>
                     </div>
                 </div>
 
 
                 <!-- Item 5 -->
+                <div class="portfolio-item">
+                            <img src="portfo8.png" alt="Projet 4" class="item-image">
+                    <div class="item-overlay">
+                        <div class="item-title">Montre</div>
+                        <div class="item-description">Exemple</div>
+                    </div>
+                </div>
+
+                                <!-- Item 6 -->
+                <div class="portfolio-item">
+                            <img src="portfo7.jpeg" alt="Projet 4" class="item-image">
+                    <div class="item-overlay">
+                        <div class="item-title">Caviste</div>
+                        <div class="item-description">Exemple</div>
+                    </div>
+                </div>
+
+
+                                <!-- Item 7 -->
+                <div class="portfolio-item">
+                            <img src="portfo4.jpeg" alt="Projet 4" class="item-image">
+                    <div class="item-overlay">
+                        <div class="item-title">Garage</div>
+                        <div class="item-description">Exemple</div>
+                    </div>
+                </div>
+
+                
+
+
+
+                <!-- Item  -->
                 <div class="portfolio-item">
                             <img src="plussurinsta.png" alt="Projet" class="item-image">
                     <div class="item-overlay">
@@ -214,6 +246,7 @@
 
         <div class="dots" id="dots"></div>
     </div>
+
 
 
 
@@ -641,6 +674,38 @@ if (isMobile) {
   });
 }
 
+</script>
+
+
+<script>
+const cards = document.querySelectorAll('.simple-card');
+const nums = document.querySelectorAll('.simple-num');
+let done = false;
+
+function animateSimple() {
+  const trigger = window.innerHeight * 0.8;
+
+  cards.forEach((card, i) => {
+    const top = card.getBoundingClientRect().top;
+    if (top < trigger && !card.classList.contains('visible')) {
+      setTimeout(() => card.classList.add('visible'), i * 120);
+
+      const num = nums[i];
+      let target = +num.dataset.target;
+      let count = 0;
+      const step = target / 50;
+
+      const inc = () => {
+        count += step;
+        num.innerText = Math.ceil(count);
+        if (count < target) requestAnimationFrame(inc);
+      };
+      inc();
+    }
+  });
+}
+
+window.addEventListener('scroll', animateSimple);
 </script>
 
 
